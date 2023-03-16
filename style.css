@@ -1,0 +1,56 @@
+body{
+    background-color: #2B1433;
+}
+
+.row{
+    margin: 100px;
+}
+
+.container{
+    padding: 70px 0;
+}
+
+#navbar-links a{
+    color: #FFFFFF;
+}
+#nav-container{
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: #2B1433;
+}
+
+#logo{
+    width: 75px;
+}
+
+#sobre-nos-conteudo{
+    background-color: #3C0F50;
+    padding: 12px;
+    border-radius: 15px;
+    margin: 40px;
+}
+
+h3{
+    color: #FFFFFF;
+    margin-top: 70px;
+}
+
+h4{
+    margin: 30px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+p{
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.navbar-expand-lg{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding: 1rem .8rem;
+}
