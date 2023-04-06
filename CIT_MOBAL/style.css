@@ -1,0 +1,60 @@
+#logo{
+    width: 75px;
+}
+
+body{
+    background-color: #2B1433;
+}
+
+.nav-link{
+    color: #FFFFFF;
+}
+
+.space-content{
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-top: 5rem;
+}
+
+.enunciado{
+    color: #FFFFFF;
+    margin-bottom: 3rem;
+    margin-left: 0.5rem;
+}
+
+.background-content{
+    background-color: #3C0F50;
+}
+
+.equipe_cards{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: #2B1433;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.text{
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.navbar{
+    background-color: #2B1433;
+}
+
+.icons-sobrenos{
+    width: 75px;
+}
+
+.image-card{
+    width: 150px;
+    height: 150px;
+}
+
+.card-img-top{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
