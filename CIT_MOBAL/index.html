@@ -37,25 +37,16 @@
             </div>
         </nav>
 
-        <section class="space-content" id="Banner">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <img src="https://picsum.photos/536/354" class="img-fluid w-100">
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        <div id="banner"></div>
 
         <section class="space-content" id="Projetos">
             <div class="container">
                 <h4 class="enunciado">Projetos</h4>
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="background-content card mb-5 project_cards rounded-4">
+                        <div class="card mb-5 project_cards rounded-4">
                             <div>
-                                <img class="icons-projetos card-img-top" src="https://picsum.photos/536/354">
+                                <img class="card-img-top" src="https://picsum.photos/536/354">
                             </div>
                             <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -65,9 +56,9 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="background-content card mb-5 project_cards rounded-4">
+                        <div class="card mb-5 project_cards rounded-4">
                             <div>
-                                <img class="icons-projetos card-img-top" src="https://picsum.photos/536/354">
+                                <img class="card-img-top" src="https://picsum.photos/536/354">
                             </div>
                             <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -77,9 +68,9 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="background-content card mb-5 project_cards rounded-4">
+                        <div class="card mb-5 project_cards rounded-4">
                             <div>
-                                <img class="icons-projetos card-img-top" src="https://picsum.photos/536/354">
+                                <img class="card-img-top" src="https://picsum.photos/536/354">
                             </div>
                             <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -92,7 +83,79 @@
             </div>
         </section>
 
-        
+
+        <section class="space-content" id="Depoimentos">
+            <div class="container">
+                <h4 class="enunciado">Depoimentos</h4>
+                <div class="row justify-content-center">
+                
+                    <div id="CaroselDepoimentos" class="carousel slide col-md-6" data-bs-touch="false">
+                        
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#CaroselDepoimentos" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#CaroselDepoimentos" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#CaroselDepoimentos" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            
+                            <div class="carousel-item active">
+                                <div class="card text-bg-dark depoimentos_cards rounded-4">
+                                    <div>
+                                        <img class="card-img-top" src="https://picsum.photos/536/354">
+                                    </div>
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+
+                            <div class="carousel-item">
+                                <div class="card text-bg-dark depoimentos_cards rounded-4">
+                                    <div>
+                                        <img class="card-img-top" src="https://picsum.photos/536/354">
+                                    </div>
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+
+                            <div class="carousel-item">
+                                <div class="card text-bg-dark depoimentos_cards rounded-4">
+                                    <div>
+                                        <img class="card-img-top" src="https://picsum.photos/536/354">
+                                    </div>
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#CaroselDepoimentos" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#CaroselDepoimentos" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+
         <section class="space-content" id="Sobre nós">
             <div class="container">
                 <h4 class="enunciado">Sobre nós</h4>

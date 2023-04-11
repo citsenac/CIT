@@ -6,6 +6,14 @@ body{
     background-color: #2B1433;
 }
 
+#banner{
+    margin-top: 4rem;
+    background-image: url(https://images4.alphacoders.com/936/thumb-1920-936378.jpg);
+    background-position: center center;
+    background-size: cover;
+    padding: 7rem;
+}
+
 .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link{
     color: #FFFFFF;
 }
@@ -39,15 +47,14 @@ body{
     text-align: center;
 }
 
-.contato_card, .project_cards{
+.contato_card, .project_cards, .depoimentos_cards{
     background-color: #3C0F50;
     display: flex;
     align-items: center;
-    justify-content: end;
     color: #FFFFFF;
 }
 
-.project_cards{
+.project_cards, .depoimentos_cards{
     text-align: center;
 }
 
@@ -74,7 +81,7 @@ body{
     width: 40px;
 }
 
-.image-card, .icons-projetos{
+.image-card{
     width: 150px;
     height: 150px;
 }
