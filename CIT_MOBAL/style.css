@@ -1,3 +1,9 @@
+*{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    src: url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+}
+
 #logo{
     width: 75px;
 }
@@ -12,6 +18,7 @@ body{
     background-position: center center;
     background-size: cover;
     padding: 7rem;
+    
 }
 
 .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link{
@@ -32,6 +39,7 @@ body{
     color: #FFFFFF;
     margin-bottom: 3rem;
     margin-left: 0.5rem;
+    font-weight: bold;
 }
 
 .background-content{
@@ -85,6 +93,7 @@ body{
     width: 150px;
     height: 150px;
 }
+
 
 .card-img-top{
     height: 100%;
