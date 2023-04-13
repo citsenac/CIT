@@ -1,15 +1,10 @@
-*{
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-    src: url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
-}
-
 #logo{
     width: 75px;
 }
 
 body{
     background-color: #2B1433;
+    font-family: 'Quicksand', sans-serif;
 }
 
 #banner{
