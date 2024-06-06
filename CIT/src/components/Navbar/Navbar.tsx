@@ -62,10 +62,10 @@ export default function Navbar() {
                             {sections.map((section: {name: string, target: string}) => {
                                 return (
                                     <li className="py-6 first:border-t border-b border-white" key={section.name}>
-                                        <a className="block w-full" href={`#${section.target}`}>{section.name}</a>
+                                        <a onClick={openMenu} className="block w-full" href={`#${section.target}`}>{section.name}</a>
                                     </li>
                                 )
-                        })}
+                            })}
                         </ul>
                     </nav>
                 </>
