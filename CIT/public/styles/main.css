@@ -1,1 +1,9 @@
 @import 'base/typograph.css';
+@import 'module/glass-container.css';
+@import 'module/glitch.css';
+
+.text-glow {
+    text-shadow: rgba(0, 0, 0, 0.25) 0 4px 4px;
+    text-shadow: rgba(255, 255, 255, 0.20) 0 0px 80px;
+    text-shadow: rgba(255, 255, 255, 0.25) 0 0px 20px;
+}
