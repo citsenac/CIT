@@ -13,6 +13,10 @@ export default function Navbar() {
                 target: "projetos"
             },
             {
+                name: "Conhecimentos",
+                target: "conhecimentos"
+            },
+            {
                 name: "Depoimentos",
                 target: "depoimentos"
             },

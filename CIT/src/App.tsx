@@ -1,3 +1,4 @@
+import Conhecimentos from "./components/Conhecimentos/Conhecimentos"
 import Header from "./components/Header/Header"
 import Navbar from "./components/Navbar/Navbar"
 import Projetos from "./components/Projetos/Projetos"
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <SobreNos />
       <Projetos />
+      <Conhecimentos />
     </main>
   )
 }
