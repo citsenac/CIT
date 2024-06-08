@@ -1,34 +1,7 @@
 import { useState } from "react";
 import scrollLock from 'scroll-lock';
-export default function Navbar() {
+export default function Navbar({sections}: {sections: {name: string, target: string}[]}) {
     const [open, setOpen] = useState(false);
-
-    const sections: {name: string, target: string}[] = [
-            {
-                name: "Sobre nós",
-                target: "sobre-nos"
-            },
-            {
-                name: "Projetos",
-                target: "projetos"
-            },
-            {
-                name: "Conhecimentos",
-                target: "conhecimentos"
-            },
-            {
-                name: "Depoimentos",
-                target: "depoimentos"
-            },
-            {
-                name: "Equipe",
-                target: "equipe"
-            },
-            {
-                name: "Contato",
-                target: "contato"
-            }
-        ];
 
     if (open) {
         scrollLock.disablePageScroll();

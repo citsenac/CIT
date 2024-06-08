@@ -5,11 +5,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Projeto from './Projeto';
 
-export default function Projetos() {
+export default function Projetos({target}: {target: string}) {
     const projetos: number[] = [0,1,2,3];
 
     return (
-        <section id="projetos" className="relative mt-24">
+        <section id={target} className="relative mt-24">
 
             <h3 className="text-2xl font-semibold text-white text-center mb-8 max-w-64 mx-auto poppins">
                 Dê uma olhada nos nossos projetos
