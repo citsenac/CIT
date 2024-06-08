@@ -9,7 +9,7 @@ export default function Navbar({sections}: {sections: {name: string, target: str
         scrollLock.enablePageScroll();
     }
 
-    const openMenu = () => {
+    const toggleMenu = () => {
         setOpen( prev => {
                 return !prev
             }
@@ -22,16 +22,16 @@ export default function Navbar({sections}: {sections: {name: string, target: str
                 Sobre nós
             </nav>
 
-            <button className="md:hidden" onClick={openMenu}>
+            <button className="md:hidden" onClick={toggleMenu}>
                 <img src="/icons/hamb-nav.svg" alt="Ícone do menu" className="w-8 h-8" />
             </button>
 
             { open && (
                 <>
-                    <div className="h-screen w-screen absolute top-0 left-0 bg-black/40 z-40"></div>
+                    <div onClick={toggleMenu} className="h-screen w-screen absolute top-0 left-0 bg-black/40 z-40"></div>
 
                     <nav className="absolute z-50 top-0 left-0 w-2/3 p-6 h-screen bg-gradient-to-b from-[#232323] to-[#262626]">
-                        <button onClick={openMenu} className="mb-10">
+                        <button onClick={toggleMenu} className="mb-10">
                             <img src="/icons/hamb-nav.svg" alt="Ícone do menu" className="w-8 h-8" />
                         </button>
 
@@ -39,7 +39,7 @@ export default function Navbar({sections}: {sections: {name: string, target: str
                             {sections.map((section: {name: string, target: string}) => {
                                 return (
                                     <li className="py-6 first:border-t border-b border-white" key={section.name}>
-                                        <a onClick={openMenu} className="block w-full" href={`#${section.target}`}>{section.name}</a>
+                                        <a onClick={toggleMenu} className="block w-full" href={`#${section.target}`}>{section.name}</a>
                                     </li>
                                 )
                             })}
