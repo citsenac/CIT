@@ -6,7 +6,12 @@ import 'swiper/css';
 import Projeto from './Projeto';
 
 export default function Projetos({target}: {target: string}) {
-    const projetos: number[] = [0,1,2,3];
+    const projetos: {id: number, imgs: string[], title: string, description: string}[] = [
+        {id:0, imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 1", description: "Descricão do projeto 1"},
+        {id:1, imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 2", description: "Descricão do projeto 2"},
+        {id:2, imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 3", description: "Descricão do projeto 3"},
+        {id:3, imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 4", description: "Descricão do projeto 4"}
+    ];
 
     return (
         <section id={target} className="relative mt-24">
@@ -25,8 +30,8 @@ export default function Projetos({target}: {target: string}) {
                     // onSwiper={(swiper) => console.log(swiper)}
                 >
                     {projetos.map((projeto) => (
-                            <SwiperSlide key={projeto}>
-                                <Projeto />
+                            <SwiperSlide key={projeto.id}>
+                                <Projeto projeto={projeto} />
                             </SwiperSlide>
                         ))
                     }
