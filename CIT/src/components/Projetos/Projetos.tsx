@@ -2,16 +2,43 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Swiper styles
+import { useState } from 'react';
+import scrolllock from 'scroll-lock';
 import 'swiper/css';
+import Modal from '../Partials/Modal';
+import ModalProjeto from './ModalProjeto';
 import Projeto from './Projeto';
 
 export default function Projetos({target}: {target: string}) {
-    const projetos: {id: number, imgs: string[], title: string, description: string}[] = [
-        {id:0, imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 1", description: "Descricão do projeto 1"},
-        {id:1, imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 2", description: "Descricão do projeto 2"},
-        {id:2, imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 3", description: "Descricão do projeto 3"},
-        {id:3, imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 4", description: "Descricão do projeto 4"}
+    const projetos: {id: string, imgs: string[], title: string, description: string}[] = [
+        {id:'0', imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 1", description: "Descricão do projeto 1"},
+        {id:'1', imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 2", description: "Descricão do projeto 2"},
+        {id:'2', imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 3", description: "Descricão do projeto 3"},
+        {id:'3', imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 4", description: "Descricão do projeto 4"}
     ];
+
+    const [open, setOpen] = useState(false);
+
+    const [projeto, setProjeto] = useState({imgs: [''], title: '', description: ''});
+
+    const toggleModal = (projeto: {imgs: string[], title: string, description: string}) => {
+        setOpen( prev => {
+                return !prev
+            }
+        );
+
+        setProjeto(() => {
+                return  projeto
+            }
+        );
+
+    }
+
+    if (open) {
+        scrolllock.disablePageScroll();
+    } else {
+        scrolllock.enablePageScroll();
+    }
 
     return (
         <section id={target} className="relative mt-24">
@@ -31,12 +58,16 @@ export default function Projetos({target}: {target: string}) {
                 >
                     {projetos.map((projeto) => (
                             <SwiperSlide key={projeto.id}>
-                                <Projeto projeto={projeto} />
+                                    <Projeto toggleModal={() => toggleModal(projeto)} projeto={projeto} />
                             </SwiperSlide>
                         ))
                     }
                 </Swiper>
             </div>
+
+            { open && <Modal toggleModal={() => toggleModal(projeto)}>
+                <ModalProjeto projeto={projeto} />
+            </Modal>}
         </section>
     )
 }
