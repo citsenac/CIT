@@ -1,4 +1,4 @@
-import GlassContainer from "../utils/GlassContainer";
+import GlassContainer from "../Partials/GlassContainer";
 
 export default function Header() {
     return (

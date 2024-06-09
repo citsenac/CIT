@@ -1,4 +1,4 @@
-import GlassContainer from "../utils/GlassContainer";
+import GlassContainer from "../Partials/GlassContainer";
 import Topico from "./Topico";
 
 export default function SobreNos({target}: {target: string}) {
