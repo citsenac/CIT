@@ -1,5 +1,6 @@
 import { register } from 'swiper/element/bundle'
 import Conhecimentos from "./components/Conhecimentos/Conhecimentos"
+import Depoimentos from './components/Depoimentos/Depoimentos'
 import Header from "./components/Header/Header"
 import Navbar from "./components/Navbar/Navbar"
 import Projetos from "./components/Projetos/Projetos"
@@ -43,6 +44,7 @@ function App() {
       <SobreNos target={sections[0].target} />
       <Projetos target={sections[1].target} />
       <Conhecimentos target={sections[2].target} />
+      <Depoimentos target={sections[3].target} />
     </main>
   )
 }
