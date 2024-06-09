@@ -1,18 +1,15 @@
-// Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Swiper styles
 import { useState } from 'react';
 import scrolllock from 'scroll-lock';
 import 'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Modal from '../Partials/Modal';
 import ModalProjeto from './ModalProjeto';
 import Projeto from './Projeto';
 
 export default function Projetos({target}: {target: string}) {
     const projetos: {id: string, imgs: string[], title: string, description: string}[] = [
-        {id:'0', imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 1", description: "Descricão do projeto 1"},
-        {id:'1', imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 2", description: "Descricão do projeto 2"},
+        {id:'0', imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 1", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."},
+        {id:'1', imgs: ["test-img.png"], title: "Projeto 2", description: "Descricão do projeto 2"},
         {id:'2', imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 3", description: "Descricão do projeto 3"},
         {id:'3', imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 4", description: "Descricão do projeto 4"}
     ];
@@ -53,8 +50,6 @@ export default function Projetos({target}: {target: string}) {
                     slidesPerView={1.5}
                     centeredSlides={true}
                     loop={true}
-                    // onSlideChange={() => console.log('slide change')}
-                    // onSwiper={(swiper) => console.log(swiper)}
                 >
                     {projetos.map((projeto) => (
                             <SwiperSlide key={projeto.id}>

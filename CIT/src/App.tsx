@@ -1,3 +1,4 @@
+import { register } from 'swiper/element/bundle'
 import Conhecimentos from "./components/Conhecimentos/Conhecimentos"
 import Header from "./components/Header/Header"
 import Navbar from "./components/Navbar/Navbar"
@@ -5,6 +6,8 @@ import Projetos from "./components/Projetos/Projetos"
 import SobreNos from "./components/SobreNos/SobreNos"
 
 function App() {
+
+  register();
 
   const sections: {name: string, target: string}[] = [
     {
