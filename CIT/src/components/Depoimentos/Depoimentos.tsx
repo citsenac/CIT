@@ -10,14 +10,16 @@ export default function Depoimentos({target}: {target: string}) {
     return (
         <section id={target} className="relative mt-24 mx-2">
 
-             <div className="max-w-64 text-start mb-10">
-                 <h3 className="text-2xl font-semibold text-white mb-2 mx-auto poppins">
+            <img src="cit-outline.svg" alt="" className="absolute top-[45%] left-0 w-full" />
+
+            <div className="max-w-64 text-start mb-10 relative z-1">
+                <h3 className="text-2xl font-semibold text-white mb-2 mx-auto poppins">
                     Depoimentos
                 </h3>
                 <p className="text-white poppins text-sm">Alguns depoimentos e experiências de alunos que passaram pelo CIT.</p>
             </div>
 
-            <div className='max-w-96 mx-auto'>
+            <div className='max-w-96 mx-auto relative z-1'>
                 <swiper-container
                     effect={'coverflow'}
                     grab-cursor={true}
@@ -29,7 +31,6 @@ export default function Depoimentos({target}: {target: string}) {
                     coverflow-effect-modifier={1}
                     coverflow-effect-slide-shadows={true}
                     loop={true}
-                    pagination="true"
                 >
                     {depoimentos.map((depoimento) => (
                         <swiper-slide key={depoimento.id}>
