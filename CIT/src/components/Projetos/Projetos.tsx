@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import scrolllock from 'scroll-lock';
-import 'swiper/css';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import Modal from '../Partials/Modal';
 import ModalProjeto from './ModalProjeto';
 import Projeto from './Projeto';
@@ -45,19 +43,20 @@ export default function Projetos({target}: {target: string}) {
             </h3>
 
             <div className="w-full box-border bg-[#989898] bg-opacity-30 border-y-2 border-[#989898] py-12">
-                <Swiper
-                    spaceBetween={30}
-                    slidesPerView={1.5}
-                    centeredSlides={true}
+                <swiper-container
+                    class="w-full"
+                    space-between={30}
+                    slides-per-view={1.5}
+                    centered-slides={true}
                     loop={true}
                 >
                     {projetos.map((projeto) => (
-                            <SwiperSlide key={projeto.id}>
+                            <swiper-slide key={projeto.id}>
                                     <Projeto toggleModal={() => toggleModal(projeto)} projeto={projeto} />
-                            </SwiperSlide>
+                            </swiper-slide>
                         ))
                     }
-                </Swiper>
+                </swiper-container>
             </div>
 
             { open && <Modal toggleModal={() => toggleModal(projeto)}>
