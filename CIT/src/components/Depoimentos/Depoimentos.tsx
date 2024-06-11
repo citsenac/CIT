@@ -8,9 +8,9 @@ export default function Depoimentos({target}: {target: string}) {
     ]
 
     return (
-        <section id={target} className="relative mt-24 mx-2">
+        <section id={target} className="relative mt-24 px-2">
 
-            <img src="cit-outline.svg" alt="" className="absolute top-[45%] left-0 w-full" />
+            <img src="cit-outline.svg" alt="Logo do CIT, em formato de uma seta para a direita, com textura de tecnologia dentro dele, em formato só de linhas" className="absolute top-[50%] left-0 w-full h-[27rem]" />
 
             <div className="max-w-64 text-start mb-10 relative z-1">
                 <h3 className="text-2xl font-semibold text-white mb-2 mx-auto poppins">
