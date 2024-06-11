@@ -17,7 +17,7 @@ export default function Conhecimentos({target}: {target: string}) {
         
             <div className="relative py-3 flex flex-col gap-y-3 max-w-full">
 
-                <div className="absolute top-0 h-full w-full bg-gradient-to-r from-[#8000FF]/30 via-[#8000FF]/0 via-30% via-[#8000FF]/0 via-70% to-[#8000FF]/30 to-100%"></div>
+                <div className="absolute top-0 h-full w-full bg-gradient-to-r from-[#8000FF]/30 via-[#8000FF]/0 via-50% to-[#8000FF]/30 to-100%"></div>
 
                 {conhecimentosDisplay.map((conhecimento, index) => (
                     <ul className="w-full flex gap-x-3 overflow-hidden" key={index}>
