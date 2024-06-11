@@ -1,3 +1,41 @@
-.conhecimentos {
-    background-color: blue;
+:root {
+    --animation-duration: 20s;
+}
+
+.portal-gradient {
+    background: linear-gradient(90deg, rgba(128,0,255,0.5) 0%, rgba(167,79,255,0) 31%, rgba(128,0,255,0) 70%, rgba(128,0,255,0.5) 100%);
+}
+
+.scroller-inner {
+    gap: 1rem;
+}
+
+.scroller[data-animated="true"] {
+    overflow: hidden;
+}
+
+.scroller[data-animated="true"] .scroller-inner {
+    flex-wrap: nowrap;
+    width: max-content;
+
+}
+
+.scroller[data-animated="true"] .scroller-inner:nth-child(odd) {
+    animation: scrollRight var(--animation-duration, 30s) linear infinite;
+}
+
+.scroller[data-animated="true"] .scroller-inner:nth-child(even) {
+    animation: scrollLeft var(--animation-duration, 30s) linear infinite;
+}
+
+@keyframes scrollRight {
+    to {
+        transform: translateX(calc(50% + .5rem));
+    }
+}
+
+@keyframes scrollLeft {
+    to {
+        transform: translateX(calc(-50% - .5rem));
+    }
 }
