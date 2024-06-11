@@ -1,12 +1,12 @@
 // import { onValue, ref } from "firebase/database";
-import { register } from 'swiper/element/bundle'
-import Conhecimentos from "./components/Conhecimentos/Conhecimentos"
-import Depoimentos from './components/Depoimentos/Depoimentos'
-import Equipe from './components/Equipe/Equipe'
-import Header from "./components/Header/Header"
-import Navbar from "./components/Navbar/Navbar"
-import Projetos from "./components/Projetos/Projetos"
-import SobreNos from "./components/SobreNos/SobreNos"
+import { register } from 'swiper/element/bundle';
+import Conhecimentos from "./components/Conhecimentos/Conhecimentos";
+import Depoimentos from './components/Depoimentos/Depoimentos';
+import Equipe from './components/Equipe/Equipe';
+import Header from "./components/Header/Header";
+import Navbar from "./components/Navbar/Navbar";
+import Projetos from "./components/Projetos/Projetos";
+import SobreNos from "./components/SobreNos/SobreNos";
 // import { db } from "./firebase";
 
 function App() {
@@ -40,19 +40,20 @@ function App() {
     }
   ];
 
-  // const dbUsers = ref(db, 'users');
-  // onValue(dbUsers, snapshot => {
-  //   const data = snapshot.val()
-    
-  //   const dataArray = Object.keys(data).map(key => {
-  //     return {
-  //       id: key,
-  //       ...data[key]
-  //     };
-  //   });
+  // const [citData, setCitData] = useState({});
 
-  //   console.log(dataArray);
-  // })
+  // useEffect(() => {
+  //   const dbCIT = ref(db);
+  //   onValue(dbCIT, snapshot => {
+  //     const data = snapshot.val()
+
+  //     if(snapshot.exists()) {
+  //       setCitData(data);
+  //     }
+  //   })
+  // }, []);
+
+  // console.log(citData);
 
   return (
     <main className="bg-gradient-to-b from-[#232323] via-[#262626] via-63% to-[#161017] min-h-screen overflow-x-hidden">
