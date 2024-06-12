@@ -8,6 +8,7 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Projetos from "./components/Projetos/Projetos";
 import SobreNos from "./components/SobreNos/SobreNos";
+import './styles/main.css';
 // import { auth, fetchCITData, signInWithEmailAndPassword } from "./firebase";
 
 function App() {
