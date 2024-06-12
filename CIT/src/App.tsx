@@ -1,6 +1,7 @@
 // import { useEffect, useState } from "react";
 import { register } from 'swiper/element/bundle';
 import Conhecimentos from "./components/Conhecimentos/Conhecimentos";
+import Contato from './components/Contato/Contato';
 import Depoimentos from './components/Depoimentos/Depoimentos';
 import Equipe from './components/Equipe/Equipe';
 import Header from "./components/Header/Header";
@@ -89,6 +90,7 @@ function App() {
       <Conhecimentos target={sections[2].target} />
       <Depoimentos target={sections[3].target} />
       <Equipe target={sections[4].target} />
+      <Contato target={sections[5].target} />
       {/* </>} */}
     </main>
   )
