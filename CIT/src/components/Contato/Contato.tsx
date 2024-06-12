@@ -10,6 +10,8 @@ type Inputs = {
 export default function Contato({target}: {target: string}) {
 
     const [erro, setErro] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
 
     {/* React Hook Form */}
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({mode: "onChange", reValidateMode: "onSubmit"});
@@ -17,13 +19,14 @@ export default function Contato({target}: {target: string}) {
 
     const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = evt.target;
-        
+
         setFormData(oldData => {
             return{...oldData, [name]: value}
         });
     }
 
     const onSubmit: SubmitHandler<Inputs> = () => {
+        setLoading(true);
         sendEmail();
         setFormData({nome: '', email: ''});
     }
@@ -57,9 +60,11 @@ export default function Contato({target}: {target: string}) {
         .then(
             () => {
                 console.log('SUCCESS!');
+                setLoading(false);
             },
             (error) => {
                 console.log('FAILED...', error.text);
+                setLoading(false);
                 setErro(true);
             },
         );
@@ -96,8 +101,8 @@ export default function Contato({target}: {target: string}) {
                     {errors.email && <span className="absolute -bottom-6 left-0 text-red-500">{errors.email.message}</span>}
                     {erro && <span className="absolute -bottom-6 left-0 text-red-500">Email inválido</span>}
                 </div>
-                <button className="w-full mb-6 py-3 rounded-lg text-white bg-[#410C85] font-medium text-base poppins">
-                    Enviar
+                <button className={`w-full mb-6 py-3 rounded-lg text-center text-white bg-[#410C85] font-medium text-base poppins ${erro || errors.email || errors.nome ? 'error-submit' : ''} ${loading || !formData.nome || !formData.email ? 'cursor-not-allowed' : 'cursor-pointer'}`} disabled={loading || !formData.nome || !formData.email}>
+                    {loading ? 'Enviando...' : 'Enviar'}
                 </button>
             </form>
             <span className="mt-3 col-span-2 row-span-1 md:col-span-1 sf-pro-display text-white text-lg">

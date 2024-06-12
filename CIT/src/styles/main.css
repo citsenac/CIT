@@ -2,6 +2,7 @@
 @import './base/typograph.css';
 @import './base/reset.css';
 @import './layout/conhecimentos.css';
+@import './layout/contato.css';
 @import './module/glass-container.css';
 @import './module/glitch.css';
 @import './module/swiper.css';

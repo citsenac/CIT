@@ -1,0 +1,15 @@
+.error-submit {
+    animation: error 2s linear forwards;
+}
+
+@keyframes error {
+    0% {
+        background: #ef4444;
+    }
+    80% {
+        background: #ef4444;
+    }
+    100% {
+        background: #410C85;
+    }
+}
