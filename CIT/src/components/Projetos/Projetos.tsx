@@ -42,7 +42,7 @@ export default function Projetos({target}: {target: string}) {
                 Dê uma olhada nos nossos projetos
             </h3>
 
-            <div className="w-full box-border bg-[#989898] bg-opacity-30 border-y-2 border-[#989898] py-12">
+            <div className="w-full box-border bg-[#989898] bg-opacity-30 border-y-2 border-solid border-[#989898] py-12">
                 <swiper-container
                     class="w-full"
                     space-between={30}

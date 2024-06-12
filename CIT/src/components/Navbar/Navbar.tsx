@@ -38,7 +38,7 @@ export default function Navbar({sections}: {sections: {name: string, target: str
                         <ul className="sf-pro-display text-sm text-white">
                             {sections.map((section: {name: string, target: string}) => {
                                 return (
-                                    <li className="py-6 first:border-t border-b border-white" key={section.name}>
+                                    <li className="py-6 first:border-t border-b border-solid border-white" key={section.name}>
                                         <a onClick={toggleMenu} className="block w-full" href={`#${section.target}`}>{section.name}</a>
                                     </li>
                                 )
