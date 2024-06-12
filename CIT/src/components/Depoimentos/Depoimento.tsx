@@ -10,7 +10,7 @@ export default function Depoimento({id, img, nome, curso, depoimento}: {id: stri
 
             <div className="w-48 flex flex-col items-start text-sm text-white sf-pro-display">
                 <div className="p-1 bg-[#5F00D8]/70 rounded">
-                    <p className="font-medium text-sm sf-pro-display bg-gradient-to-r from-[#B0B0B0] to-white text-transparent bg-clip-text inline-block text-2xl ">
+                    <p className="font-medium text-sm sf-pro-display bg-gradient-to-r from-[#B0B0B0] to-white text-transparent bg-clip-text inline-block">
                         {curso}
                     </p>
                 </div>
