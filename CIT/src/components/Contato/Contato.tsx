@@ -1,39 +1,6 @@
 export default function Contato({target}: {target: string}) {
     return (
-
-        
-
         <section id={target} className="relative mt-16 px-2 grid grid-cols-2 grid-rows-5">
-            {/*
-            Grid style to desktop
-            .parent {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(6, 1fr);
-                grid-column-gap: 0px;
-                grid-row-gap: 0px;
-                }
-
-            .div1 { grid-area: 1 / 1 / 4 / 2; }
-            .div2 { grid-area: 1 / 2 / 7 / 3; }
-            .div3 { grid-area: 4 / 1 / 7 / 2; }
-            */}
-
-            {/*
-            Grid style to mobile
-            .parent {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(6, 1fr);
-                grid-column-gap: 0px;
-                grid-row-gap: 0px;
-            }
-
-            .div1 { grid-area: 1 / 1 / 3 / 3; }
-            .div2 { grid-area: 3 / 1 / 5 / 3; }
-            .div3 { grid-area: 5 / 1 / 7 / 3; }
-            */}
-
             <h3 className="text-2xl font-semibold text-center text-white mx-auto poppins col-span-2 row-span-1 md:col-span-1">
                 Entre em contato com a gente
             </h3>
