@@ -1,4 +1,6 @@
+/* CSS Imports file */
 @import 'base/typograph.css';
+@import 'base/reset.css';
 @import 'layout/conhecimentos.css';
 @import 'module/glass-container.css';
 @import 'module/glitch.css';
