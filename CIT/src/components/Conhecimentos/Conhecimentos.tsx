@@ -31,7 +31,7 @@ export default function Conhecimentos({target}: {target: string}) {
                         ))}
 
                         {/* Duplicate to make scroll effect */}
-                        {conhecimento.map((conhecimento, index) => (
+                        {scrollabe && conhecimento.map((conhecimento, index) => (
                             <li aria-hidden="true" className={`capitalize min-w-fit p-2 flex items-center justify-center gap-x-3 h-10 text-sm font-semibold text-white bg-gradient-to-br from-[#351B33] to-[#9B4F96] poppins`} key={index}>
                                 <img src="test-icon-stacks.svg" alt="Stack icon" className="w-6 h-6" />
                                 {conhecimento}
