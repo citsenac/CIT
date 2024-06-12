@@ -14,7 +14,7 @@ export default function Header() {
 
             <div className="max-w-48 mx-auto text-center">
                 <GlassContainer>
-                    <a href="#contato" className="w-full block py-4 px-9 poppins text-xs text-white">
+                    <a href="#contato" className="w-full block py-4 px-9 font-medium poppins text-xs text-white">
                             Mande um e-mail
                     </a>
                 </GlassContainer>
