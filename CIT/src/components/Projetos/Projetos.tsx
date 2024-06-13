@@ -18,7 +18,7 @@ export default function Projetos({target}: {target: string}) {
         {id:'9', imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 3", description: "Descricão do projeto 3"},
         {id:'10', imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 3", description: "Descricão do projeto 3"},
     ];
-    const { height, width } = useWindowDimensions();
+    const { width } = useWindowDimensions();
 
     const [open, setOpen] = useState(false);
 
