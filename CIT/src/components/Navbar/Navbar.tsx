@@ -23,9 +23,9 @@ export default function Navbar({sections}: {sections: {name: string, target: str
                 <ul className="nav-links flex items-center justify-between sf-pro-display text-base text-white flex-1 gap-x-12">
                     {sections.map((section: {name: string, target: string}) => {
                         return (
-                            <li className="h-full group  p-1 rounded-full relative flex justify-center items-center" key={section.name}>
-                                <div className="absolute w-full h-full scale-125 rounded-full group-hover:bg-slate-200/10 group-hover:backdrop-blur-3xl"></div>
-                                <a href={`#${section.target}`} className="w-full h-full block relative z-1">
+                            <li className="h-full p-1 rounded-full relative flex justify-center items-center" key={section.name}>
+                                <div className="absolute w-full h-full scale-150 rounded-full"></div>
+                                <a href={`#${section.target}`} className="w-full h-full block peer relative z-1 nav-link">
                                     {section.name}
                                 </a>
                             </li>
