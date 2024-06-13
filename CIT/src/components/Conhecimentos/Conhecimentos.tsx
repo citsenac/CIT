@@ -1,7 +1,11 @@
+import useWindowDimensions from "../Utils/WindowDimensions";
+
 export default function Conhecimentos({target}: {target: string}) {
 
     const conhecimentos = ['html', 'css', 'javascript', 'angular', 'laravel', 'java', 'react', 'inteligência artificial', 'C#', 'python', 'React Native', 'tailwind css', 'MUI', 'Bootstrap', 'SQL', 'ExpressJS', 'MongoDB', 'Adobe', 'Figma', 'Linux', 'JFrame', '.NET', 'SwiftUI', 'Spring', 'Ionic', 'C']
 
+    const { width } = useWindowDimensions();
+    
     const total = Math.ceil(conhecimentos.length / 3);
 
     const conhecimentosDisplay = [conhecimentos.slice(0, total), conhecimentos.slice(total, total * 2), conhecimentos.slice(total * 2, total * 3)]
@@ -32,6 +36,12 @@ export default function Conhecimentos({target}: {target: string}) {
 
                         {/* Duplicate to make scroll effect */}
                         {scrollabe && conhecimento.map((conhecimento, index) => (
+                            <li aria-hidden="true" className={`capitalize min-w-fit p-2 flex items-center justify-center gap-x-3 h-10 text-sm font-semibold text-white bg-gradient-to-br from-[#351B33] to-[#9B4F96] poppins`} key={index}>
+                                <img src="test-icon-stacks.svg" alt="Stack icon" className="w-6 h-6" />
+                                {conhecimento}
+                            </li>
+                        ))}
+                        {scrollabe && width > 1024 && conhecimento.map((conhecimento, index) => (
                             <li aria-hidden="true" className={`capitalize min-w-fit p-2 flex items-center justify-center gap-x-3 h-10 text-sm font-semibold text-white bg-gradient-to-br from-[#351B33] to-[#9B4F96] poppins`} key={index}>
                                 <img src="test-icon-stacks.svg" alt="Stack icon" className="w-6 h-6" />
                                 {conhecimento}

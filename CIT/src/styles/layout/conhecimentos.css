@@ -1,5 +1,5 @@
 :root {
-    --animation-duration: 20s;
+    --animation-duration: 10s;
 }
 
 .portal-gradient {
@@ -37,5 +37,19 @@
 @keyframes scrollLeft {
     to {
         transform: translateX(calc(-50% - .5rem));
+    }
+}
+
+@media (min-width: 1024px) {
+    @keyframes scrollRight {
+        to {
+            transform: translateX(calc(33.3333% + .5rem));
+        }
+    }
+    
+    @keyframes scrollLeft {
+        to {
+            transform: translateX(calc(-33.3333% - .5rem));
+        }
     }
 }
