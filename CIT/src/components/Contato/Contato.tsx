@@ -12,16 +12,23 @@ export default function Contato({target}: {target: string}) {
 
     const [erro, setErro] = useState(false);
     const [loading, setLoading] = useState(false);
-    const [successAnimation, setSuccessAnimation] = useState(true);
+    const [successAnimation, setSuccessAnimation] = useState(false);
 
     {/* React Hook Form */}
-    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({mode: "onChange", reValidateMode: "onSubmit"});
+    const { register, handleSubmit, formState: { errors }, clearErrors } = useForm<Inputs>({mode: "onChange", reValidateMode: "onSubmit"});
     const [formData, setFormData] = useState({nome: '', email: ''});
 
     const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = evt.target;
 
         setErro(false);
+        if (name === 'email') {
+            clearErrors('email');
+        
+        }
+        if (name === 'nome') {
+            clearErrors('nome');
+        }
 
         setFormData(oldData => {
             return{...oldData, [name]: value}
