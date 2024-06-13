@@ -67,13 +67,11 @@ export default function Contato({target}: {target: string}) {
         })
         .then(
             () => {
-                console.log('SUCCESS!');
                 setLoading(false);
                 setFormData({nome: '', email: ''});
                 setSuccessAnimation(true);
             },
             (error) => {
-                console.log('FAILED...', error.text);
                 setLoading(false);
                 setErro(true);
             },
