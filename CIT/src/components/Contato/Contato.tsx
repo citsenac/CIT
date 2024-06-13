@@ -115,16 +115,23 @@ export default function Contato({target}: {target: string}) {
                     {errors.email && <span className="absolute -bottom-6 left-0 text-red-500">{errors.email.message}</span>}
                     {erro && <span className="absolute -bottom-6 left-0 text-red-500">Email inválido</span>}
                 </div>
-                <button className={`w-full relative mb-6 py-3 rounded-lg flex justify-center items-center text-white bg-[#410C85] font-medium text-base poppins ${loading || !formData.nome || !formData.email ? 'cursor-not-allowed' : 'cursor-pointer'}`}
-                    disabled={loading || !formData.nome || !formData.email}
-                    data-invalid={erro || errors.email || errors.nome ? 'true' : 'false'}
-                    data-success={successAnimation ? 'true' : 'false'}>
-                    {loading ?
-                        <SpinLoader />
-                    : ''}
-                    {successAnimation && "Mensagem enviada!"}
-                    {!loading && !erro && !errors.email && !errors.nome && !successAnimation && 'Enviar'}
-                </button>
+                <div className={`w-full relative flex justify-center items-center mb-6 ${loading || !formData.nome || !formData.email ? 'cursor-not-allowed' : 'cursor-pointer'}`}>
+                    <button className={`w-full py-3 rounded-lg flex justify-center items-center text-white bg-[#410C85] font-medium text-base poppins`}
+                        disabled={loading || !formData.nome || !formData.email}
+                        data-invalid={erro || errors.email || errors.nome ? 'true' : 'false'}
+                        data-success={successAnimation ? 'true' : 'false'}>
+                        {loading ?
+                            <SpinLoader />
+                        : ''}
+                        {successAnimation && 'Enviado'}
+                        {!loading && !erro && !errors.email && !errors.nome && !successAnimation && 'Enviar'}
+                    </button>
+                    {successAnimation &&
+                        <div className="absolute text-white font-medium text-base poppins w-full h-full growing-bg-success left-0 top-0 rounded-lg flex justify-center items-center">
+                            Mensagem enviada!
+                        </div>
+                    }
+                </div>
             </form>
             <span className="mt-3 col-span-2 row-span-1 md:col-span-1 sf-pro-display text-white text-lg">
                 Ao inserir seu nome e e-mail, receberemos suas informações e entraremos em contato com você o mais breve possível.
