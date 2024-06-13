@@ -1,13 +1,19 @@
-/* button[data-invalid="true"] {
-    animation: error 2s linear forwards;
-} */
+/* NORMAL */
 
-input[data-invalid="true"] {
-    animation: shake .5s;
+button[data-normal="true"]{
+    animation: appearingText .5s normal ease-out;
 }
-input[data-invalid="true"] ~ img {
-    animation: shake .5s;
+
+@keyframes appearingText {
+    0% {
+        color: #410C85;
+    }
+    100% {
+        color: #FFF;
+    }
 }
+
+/* SUCCESS */
 
 button[data-success="true"]{
     color: #410C85;
@@ -43,6 +49,19 @@ button[data-success="true"] ~ .growing-bg-success {
         color: rgba(0, 128, 0, 0);
         background: #410C85;
     }
+}
+
+/* ERROR */
+
+/* button[data-invalid="true"] {
+    animation: error 2s linear forwards;
+} */
+
+input[data-invalid="true"] {
+    animation: shake .5s;
+}
+input[data-invalid="true"] ~ img {
+    animation: shake .5s;
 }
 
 /* @keyframes error {
@@ -101,6 +120,8 @@ button[data-success="true"] ~ .growing-bg-success {
         transform: translateX(0);
     }
 }
+
+/* CHECK MARK */
 
 .checkmark__circle{
     stroke-dasharray: 166;

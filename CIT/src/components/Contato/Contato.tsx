@@ -119,7 +119,8 @@ export default function Contato({target}: {target: string}) {
                     <button className={`w-full py-3 rounded-lg flex justify-center items-center text-white bg-[#410C85] font-medium text-base poppins`}
                         disabled={loading || !formData.nome || !formData.email}
                         data-invalid={erro || errors.email || errors.nome ? 'true' : 'false'}
-                        data-success={successAnimation ? 'true' : 'false'}>
+                        data-success={successAnimation ? 'true' : 'false'}
+                        data-normal={!loading && !erro && !errors.email && !errors.nome && !successAnimation ? 'true' : 'false'}>
                         {loading ?
                             <SpinLoader />
                         : ''}
