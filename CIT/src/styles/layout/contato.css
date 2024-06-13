@@ -28,22 +28,29 @@ button[data-success="true"] ~ .growing-bg-success {
     0% {
         color: rgba(0, 128, 0, 0);
         width: 0%;
-        background: #008000;
+        background: rgb(0,128,0);
+        background: linear-gradient(138deg, rgba(0,128,0,1) 0%, rgba(6,91,6,1) 33%, rgba(0,128,0,1) 66%, rgba(6,91,6,1) 100%);
         border-radius: .5rem 25% 90% .5rem / .5rem 1% 95% .5rem;
     }
     12% {
         color: #008000;
-        background: #008000;
+        background: rgb(0,128,0);
+        background: linear-gradient(138deg, rgba(0,128,0,1) 0%, rgba(6,91,6,1) 33%, rgba(0,128,0,1) 66%, rgba(6,91,6,1) 100%);
     }
     13%{
         color: #FFF;
         width: 100%;
-        background: #008000;
+        background: rgb(0,128,0);
+        background: linear-gradient(138deg, rgba(0,128,0,1) 0%, rgba(6,91,6,1) 33%, rgba(0,128,0,1) 66%, rgba(6,91,6,1) 100%);
         border-radius: .5rem;
     }
     70% {
         color: #FFF;
-        background: #008000;
+        background: rgb(0,128,0);
+        background: linear-gradient(138deg, rgba(0,128,0,1) 0%, rgba(6,91,6,1) 33%, rgba(0,128,0,1) 66%, rgba(6,91,6,1) 100%);
+    }
+    70.1% {
+        background: rgb(0,128,0);
     }
     100% {
         color: rgba(0, 128, 0, 0);
@@ -53,9 +60,76 @@ button[data-success="true"] ~ .growing-bg-success {
 
 /* ERROR */
 
-/* button[data-invalid="true"] {
-    animation: error 2s linear forwards;
-} */
+button[data-invalid="true"]{
+    color: #410C85;
+}
+
+button[data-invalid="true"] ~ .growing-bg-error {
+    background: #ef4444;
+    background: linear-gradient(138deg, rgba(239,68,68,1) 0%, rgba(169,53,53,1) 41%, rgba(193,58,58,1) 66%, rgba(126,44,44,1) 100%);
+    animation: normal 3s error linear forwards;
+}
+
+.growing-bg-error > svg {
+    animation: normal linear 1s appearingError;
+}
+
+@keyframes error {
+    0% {
+        color: rgba(0, 128, 0, 0);
+        width: 0%;
+        background: #ef4444;
+        background: linear-gradient(138deg, rgba(239,68,68,1) 0%, rgba(169,53,53,1) 41%, rgba(193,58,58,1) 66%, rgba(126,44,44,1) 100%);
+        border-radius: .5rem 25% 90% .5rem / .5rem 1% 95% .5rem;
+    }
+    12% {
+        color: #ef4444;
+        background: rgb(239,68,68);
+        background: linear-gradient(138deg, rgba(239,68,68,1) 0%, rgba(169,53,53,1) 41%, rgba(193,58,58,1) 66%, rgba(126,44,44,1) 100%);
+    }
+    13%{
+        color: #FFF;
+        width: 100%;
+        background: rgb(239,68,68);
+        background: linear-gradient(138deg, rgba(239,68,68,1) 0%, rgba(169,53,53,1) 41%, rgba(193,58,58,1) 66%, rgba(126,44,44,1) 100%);
+        border-radius: .5rem;
+    }
+    70% {
+        color: #FFF;
+        background: rgb(239,68,68);
+        background: linear-gradient(138deg, rgba(239,68,68,1) 0%, rgba(169,53,53,1) 41%, rgba(193,58,58,1) 66%, rgba(126,44,44,1) 100%);
+    }
+}
+
+@keyframes appearingError {
+    0% {
+        opacity: 0;
+        transform: translateY(-200%);
+        scale: 1 1.2;
+    }
+    19% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    49% {
+        scale: 1 1.2;
+    }
+    50% {
+        transform: translateY(0%);
+        scale: 1 1;
+    }
+    51% {
+        scale: 1 .5;
+    }
+    70% {
+        scale: 1 1;
+    }
+
+}
+
+/* SHAKE ON ERROR */
 
 input[data-invalid="true"] {
     animation: shake .5s;
@@ -63,18 +137,6 @@ input[data-invalid="true"] {
 input[data-invalid="true"] ~ img {
     animation: shake .5s;
 }
-
-/* @keyframes error {
-    0% {
-        background: #ef4444;
-    }
-    80% {
-        background: #ef4444;
-    }
-    100% {
-        background: #410C85;
-    }
-} */
 
 @keyframes shake {
     0% {

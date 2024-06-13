@@ -132,7 +132,7 @@ export default function Contato({target}: {target: string}) {
                             <SpinLoader />
                         : ''}
                         {successAnimation && 'Enviado'}
-                        {(erro || errors.email || errors.nome) && "!"}
+                        {(erro || errors.email || errors.nome) && "Erro"}
                         {!loading && !erro && !errors.email && !errors.nome && !successAnimation && 'Enviar'}
                     </button>
                     {successAnimation &&
@@ -141,7 +141,15 @@ export default function Contato({target}: {target: string}) {
                                 <circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
                                 <path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
                             </svg>
-                            <span className='sr-only'>Desenho de verificado</span>
+                            <span className='sr-only'>O envio foi um sucesso</span>
+                        </div>
+                    }
+                    {(erro || errors.email || errors.nome) &&
+                        <div className="overflow-hidden absolute text-white font-medium text-base poppins w-full h-full py-3 growing-bg-error left-0 top-0 rounded-lg flex justify-center items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-10 h-10">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                            </svg>
+                            <span className='sr-only'>O envio falhou</span>
                         </div>
                     }
                 </div>
