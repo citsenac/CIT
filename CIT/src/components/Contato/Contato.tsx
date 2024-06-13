@@ -115,9 +115,9 @@ export default function Contato({target}: {target: string}) {
                     {errors.email && <span className="absolute -bottom-6 left-0 text-red-500">{errors.email.message}</span>}
                     {erro && <span className="absolute -bottom-6 left-0 text-red-500">Email inválido</span>}
                 </div>
-                <div className={`w-full relative flex justify-center items-center mb-6 ${loading || !formData.nome || !formData.email ? 'cursor-not-allowed' : 'cursor-pointer'}`}>
+                <div className={`w-full relative flex justify-center items-center mb-6 ${loading || !formData.nome || !formData.email || successAnimation || erro ? 'cursor-not-allowed' : 'cursor-pointer'}`}>
                     <button className={`w-full py-3 rounded-lg flex justify-center items-center text-white bg-[#410C85] font-medium text-base poppins`}
-                        disabled={loading || !formData.nome || !formData.email}
+                        disabled={loading || !formData.nome || !formData.email || successAnimation || erro }
                         data-invalid={erro || errors.email || errors.nome ? 'true' : 'false'}
                         data-success={successAnimation ? 'true' : 'false'}
                         data-normal={!loading && !erro && !errors.email && !errors.nome && !successAnimation ? 'true' : 'false'}>
