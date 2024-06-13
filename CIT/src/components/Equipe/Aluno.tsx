@@ -5,7 +5,7 @@ export default function Aluno({aluno}: {aluno: {id: string, img: string, nome: s
             <div className="absolute w-full py-3 px-6 bottom-0 rounded-b-xl text-white flex justify-between">
                 <div className="w-full h-full bg-[#454545]/60 backdrop-blur-md absolute left-0 top-0 rounded-b-xl"></div>
                 <span className="text-white relative z-1 text-sm poppins font-medium">{aluno.nome}</span>
-                <a href={aluno.linkedin} className="relative z-1">
+                <a href={aluno.linkedin} target="_blank" className="relative z-1">
                     <img src="icons/linkedin.svg" alt="Ícone do Linkedin" />
                 </a>
             </div>
