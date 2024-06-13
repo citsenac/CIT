@@ -54,7 +54,7 @@ export default function Projetos({target}: {target: string}) {
                 <swiper-container
                     class="w-full"
                     space-between={30}
-                    slides-per-view={width < 768 ? 1.5 : (width < 1024 ? 3.5 : 4.5)}
+                    slides-per-view={width < 660 ? 1.5 : (width < 768 ? 2.5 : (width < 1024 ? 3.5 : 4.5))}
                     centered-slides={true}
                     loop={true}
                 >
