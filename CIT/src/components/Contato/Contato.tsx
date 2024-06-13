@@ -109,10 +109,12 @@ export default function Contato({target}: {target: string}) {
                 </div>
                 <button className={`w-full mb-6 py-3 rounded-lg text-center text-white bg-[#410C85] font-medium text-base poppins ${loading || !formData.nome || !formData.email ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                     disabled={loading || !formData.nome || !formData.email}
-                    data-invalid={erro || errors.email || errors.nome ? 'true' : 'false'}>
+                    data-invalid={erro || errors.email || errors.nome ? 'true' : 'false'}
+                    data-success={success ? 'true' : 'false'}>
                     {loading ?
                         <SpinLoader />
-                    : 'Enviar'}
+                    : ''}
+                    {!loading && !erro && !errors.email && !errors.nome && !success && 'Enviar'}
                 </button>
             </form>
             <span className="mt-3 col-span-2 row-span-1 md:col-span-1 sf-pro-display text-white text-lg">
