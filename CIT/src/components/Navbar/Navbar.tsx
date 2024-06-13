@@ -18,9 +18,9 @@ export default function Navbar({sections}: {sections: {name: string, target: str
 
     return (
         <div className="w-full p-6">
-            <nav className="hidden md:flex items-center justify-between px-9 py-2 gap-x-12 sf-pro-display mx-auto max-w-4xl box-border bg-[#989898] bg-opacity-30 rounded-2xl border-solid border-2 border-[#989898] glass-container-shadow">
+            <nav className="hidden navbar md:flex items-center justify-between px-9 py-2 gap-x-12 sf-pro-display mx-auto max-w-4xl max-h-12 box-border bg-[#989898] bg-opacity-30 rounded-2xl border-solid border-2 border-[#989898] glass-container-shadow">
                 <img src="logo-cit.svg" alt="Logo do CIT" className="w-8 h-8" />
-                <ul className="flex items-center justify-between sf-pro-display text-base text-white flex-1 gap-x-12">
+                <ul className="nav-links flex items-center justify-between sf-pro-display text-base text-white flex-1 gap-x-12">
                     {sections.map((section: {name: string, target: string}) => {
                         return (
                             <li className="h-full group  p-1 rounded-full relative flex justify-center items-center" key={section.name}>

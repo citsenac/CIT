@@ -1,0 +1,29 @@
+.navbar {
+    overflow: hidden;
+    animation: openNav 1s ease-in-out;
+}
+
+.navbar > .nav-links {
+    animation: appearingText .75s ease-out;
+}
+
+@keyframes openNav {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes appearingText {
+    0% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
