@@ -46,6 +46,10 @@ export default function Contato({target}: {target: string}) {
             minLength: {
                 value: 3,
                 message: "O nome deve ter pelo menos 3 letras!"
+            },
+            maxLength: {
+                value: 64,
+                message: "O nome deve ter no máximo 64 letras!"
             }
         },
         email: {
@@ -103,7 +107,7 @@ export default function Contato({target}: {target: string}) {
                         Nome
                     </label>
                     <input {...register("nome", registerOptions.nome)} onChange={handleChange} value={formData.nome} required type="text" name="nome" id="nome" placeholder="Nome"
-                        data-invalid={errors.nome ? 'true' : 'false'}
+                        data-invalid={errors.nome ? 'true' : 'false'} maxLength={64}
                         className={`w-full bg-[#D9D9D9] focus:outline-[#5D5D5D] focus:outline-1 rounded-lg p-4 text-black font-semibold text-xs poppins border-solid border-2 ${errors.nome ? 'border-red-500' : 'border-[#D9D9D9]'}`} />
                     {errors.nome && <span className="absolute -bottom-6 left-0 text-red-500">{errors.nome.message}</span>}
                 </div>
@@ -120,9 +124,9 @@ export default function Contato({target}: {target: string}) {
                     {errors.email && <span className="absolute -bottom-6 left-0 text-red-500">{errors.email.message}</span>}
                     {erro && <span className="absolute -bottom-6 left-0 text-red-500">Email inválido</span>}
                 </div>
-                <div className={`w-full relative flex justify-center items-center mb-6 ${loading || !formData.nome || !formData.email || successAnimation || erro ? 'cursor-not-allowed' : 'cursor-pointer'}`}>
-                    <button className={`w-full py-3 rounded-lg flex justify-center items-center text-white bg-[#410C85] font-medium text-base poppins`}
-                        disabled={loading || !formData.nome || !formData.email || successAnimation || erro }
+                <div className={`w-full relative flex justify-center items-center mb-6 `}>
+                    <button className={`w-full py-3 rounded-lg flex justify-center items-center text-white bg-[#410C85] font-medium text-base poppins ${loading || !formData.nome || !formData.email || successAnimation || erro || errors.email || errors.nome ? 'hover:cursor-not-allowed' : 'cursor-pointer'}`}
+                        disabled={loading || !formData.nome || !formData.email || successAnimation || erro}
                         data-invalid={erro || errors.email || errors.nome ? 'true' : 'false'}
                         data-success={successAnimation ? 'true' : 'false'}
                         data-normal={!loading && !erro && !errors.email && !errors.nome && !successAnimation ? 'true' : 'false'}>
