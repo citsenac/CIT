@@ -17,7 +17,7 @@ export default function Depoimentos({target}: {target: string}) {
     return (
         <section id={target} className="relative mt-24 px-2">
 
-            <img src="logo-cit-outline.svg" alt="Logo do CIT, em formato de uma seta para a direita, com textura de tecnologia dentro dele, em formato só de linhas" className="absolute top-[50%] left-0 w-full h-[27rem]" />
+            <img src="logo-cit-outline.svg" alt="Logo do CIT, em formato de uma seta para a direita, com textura de tecnologia dentro dele, em formato só de linhas" className="absolute top-1/2 left-0 w-full h-[27rem] md:-top-1/4 md:h-[70rem] md:-translate-x-1/4" />
 
             <div className="max-w-64 md:mx-auto md:max-w-4xl text-start mb-10 relative z-1">
                 <h3 className="text-2xl md:text-4xl font-semibold text-white mb-2 mx-auto poppins">
