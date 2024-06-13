@@ -7,7 +7,7 @@ export default function Topico({children, title, icon}: {children: React.ReactNo
                     {title}
                 </h3>
             </div>
-            <p className="text-white sf-pro-display text-sm md:text-lg">{children}</p>
+            <p className="text-white sf-pro-display text-base md:text-lg">{children}</p>
         </div>
     )
 }

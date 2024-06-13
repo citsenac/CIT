@@ -12,9 +12,9 @@ export default function Header() {
                 Lorem Ipsum is simply dummy text of the printing.
             </h2>
 
-            <div className="max-w-48 md:max-w-56 mx-auto text-center">
+            <div className="max-w-56 md:max-w-56 mx-auto text-center">
                 <GlassContainer>
-                    <a href="#contato" className="w-full block py-4 px-9 font-medium poppins text-xs text-white">
+                    <a href="#contato" className="w-full block py-4 px-9 font-medium poppins text-sm text-white">
                             Mande um e-mail
                     </a>
                 </GlassContainer>
