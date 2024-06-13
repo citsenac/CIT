@@ -17,7 +17,7 @@ export default function Navbar({sections}: {sections: {name: string, target: str
     }
 
     return (
-        <div className="w-full p-6">
+        <div className="w-full p-6 md:p-0 md:mt-12">
             <nav className="hidden navbar md:flex items-center justify-between px-9 py-2 gap-x-12 sf-pro-display mx-auto max-w-4xl max-h-12 box-border bg-[#989898] bg-opacity-30 rounded-2xl border-solid border-2 border-[#989898] glass-container-shadow">
                 <img src="logo-cit.svg" alt="Logo do CIT" className="w-8 h-8" />
                 <ul className="nav-links flex items-center justify-between sf-pro-display text-base text-white flex-1 gap-x-12">
