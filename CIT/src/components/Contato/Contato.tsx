@@ -71,7 +71,7 @@ export default function Contato({target}: {target: string}) {
                 setFormData({nome: '', email: ''});
                 setSuccessAnimation(true);
             },
-            (error) => {
+            () => {
                 setLoading(false);
                 setErro(true);
             },
