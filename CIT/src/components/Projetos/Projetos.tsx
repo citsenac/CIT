@@ -20,6 +20,8 @@ export default function Projetos({target}: {target: string}) {
     ];
     const { width } = useWindowDimensions();
 
+    scrolllock.enablePageScroll();
+
     const [open, setOpen] = useState(false);
 
     const [projeto, setProjeto] = useState({imgs: [''], title: '', description: ''});
