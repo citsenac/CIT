@@ -1,5 +1,5 @@
 import emailjs from '@emailjs/browser';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { SubmitHandler, useForm } from "react-hook-form";
 import SpinLoader from '../Partials/SpinLoader';
 
@@ -12,7 +12,7 @@ export default function Contato({target}: {target: string}) {
 
     const [erro, setErro] = useState(false);
     const [loading, setLoading] = useState(false);
-    const [success, setSuccess] = useState(false);
+    const [successAnimation, setSuccessAnimation] = useState(true);
 
     {/* React Hook Form */}
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({mode: "onChange", reValidateMode: "onSubmit"});
@@ -51,7 +51,6 @@ export default function Contato({target}: {target: string}) {
     }
 
     {/* EmailJS send */}
-    const form = useRef();
 
     const sendEmail = () => {
 
@@ -64,7 +63,7 @@ export default function Contato({target}: {target: string}) {
                 console.log('SUCCESS!');
                 setLoading(false);
                 setFormData({nome: '', email: ''});
-                setSuccess(true);
+                setSuccessAnimation(true);
             },
             (error) => {
                 console.log('FAILED...', error.text);
@@ -79,12 +78,21 @@ export default function Contato({target}: {target: string}) {
         handleSubmit(onSubmit)();
     };
 
+    if(successAnimation) {
+        setTimeout(
+            () => {
+                setSuccessAnimation(false);
+            },
+            3000
+        )
+    }
+
     return (
         <section id={target} className="relative mt-16 px-2 grid grid-cols-2 grid-rows-5">
             <h3 className="text-2xl font-semibold text-center text-white mx-auto poppins col-span-2 row-span-1 md:col-span-1">
                 Entre em contato com a gente
             </h3>
-            <form ref={form} onSubmit={handleFormSubmit} className="w-full col-span-2 row-span-3 md:col-span-1 md:row-span-6">
+            <form onSubmit={handleFormSubmit} className="w-full col-span-2 row-span-3 md:col-span-1 md:row-span-6">
                 <div className="flex flex-col gap-y-2 mb-6 relative">
                     <label htmlFor="nome" className="text-white poppins font-semibold text-lg ml-4">
                         Nome
@@ -107,14 +115,15 @@ export default function Contato({target}: {target: string}) {
                     {errors.email && <span className="absolute -bottom-6 left-0 text-red-500">{errors.email.message}</span>}
                     {erro && <span className="absolute -bottom-6 left-0 text-red-500">Email inválido</span>}
                 </div>
-                <button className={`w-full mb-6 py-3 rounded-lg text-center text-white bg-[#410C85] font-medium text-base poppins ${loading || !formData.nome || !formData.email ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                <button className={`w-full relative mb-6 py-3 rounded-lg flex justify-center items-center text-white bg-[#410C85] font-medium text-base poppins ${loading || !formData.nome || !formData.email ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                     disabled={loading || !formData.nome || !formData.email}
                     data-invalid={erro || errors.email || errors.nome ? 'true' : 'false'}
-                    data-success={success ? 'true' : 'false'}>
+                    data-success={successAnimation ? 'true' : 'false'}>
                     {loading ?
                         <SpinLoader />
                     : ''}
-                    {!loading && !erro && !errors.email && !errors.nome && !success && 'Enviar'}
+                    {successAnimation && "Mensagem enviada!"}
+                    {!loading && !erro && !errors.email && !errors.nome && !successAnimation && 'Enviar'}
                 </button>
             </form>
             <span className="mt-3 col-span-2 row-span-1 md:col-span-1 sf-pro-display text-white text-lg">

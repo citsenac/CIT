@@ -1,6 +1,6 @@
-button[data-invalid="true"] {
+/* button[data-invalid="true"] {
     animation: error 2s linear forwards;
-}
+} */
 
 input[data-invalid="true"] {
     animation: shake .5s;
@@ -9,7 +9,27 @@ input[data-invalid="true"] ~ img {
     animation: shake .5s;
 }
 
-@keyframes error {
+button[data-success="true"] > .growing-bg-success {
+    background: #008000;
+    width: 100%;
+    height: 100%;
+    animation: normal 3s success linear;
+}
+
+@keyframes success {
+    0% {
+        scale: 0;
+    }
+    80% {
+        background: #008000;
+    }
+    100% {
+        background: #410C85;
+        scale: 100;
+    }
+}
+
+/* @keyframes error {
     0% {
         background: #ef4444;
     }
@@ -19,7 +39,7 @@ input[data-invalid="true"] ~ img {
     100% {
         background: #410C85;
     }
-}
+} */
 
 @keyframes shake {
     0% {
