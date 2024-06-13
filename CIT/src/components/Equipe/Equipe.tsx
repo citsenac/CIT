@@ -10,9 +10,9 @@ export default function Equipe({target}: {target: string}) {
     ]
 
     const funcionario = [
-        {id: "0", img: "test-profile.png", nome: "Nome do Funcionario"},
-        {id: "1", img: "test-profile.png", nome: "Nome do Funcionario"},
-        {id: "2",img: "test-profile.png", nome: "Nome do Funcionario"}
+        {id: "0", img: "test-profile.png", nome: "Nome do Funcionario", cargo: "Cargo do Funcionario"},
+        {id: "1", img: "test-profile.png", nome: "Nome do Funcionario", cargo: "Cargo do Funcionario"},
+        {id: "2",img: "test-profile.png", nome: "Nome do Funcionario", cargo: "Cargo do Funcionario"}
     ]
 
     return (
