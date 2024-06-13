@@ -2,7 +2,7 @@ import GlassContainer from "../Partials/GlassContainer";
 
 export default function Header() {
     return (
-        <header className="md:mt-28">
+        <header className="md:mt-40">
             <h3 className="relative z-1 glitch-trans text-xs flex items-center justify-center gap-x-4 text-glow">
                 <img src="logo-cit.svg" alt="Logo do CIT" className="w-5 h-6 md:w-7 md:h-8" />
                 <span className="text-white font-bold text-xs md:text-2xl">Centro de Inovação e Tecnologia</span>
