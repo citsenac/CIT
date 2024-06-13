@@ -132,6 +132,7 @@ export default function Contato({target}: {target: string}) {
                             <SpinLoader />
                         : ''}
                         {successAnimation && 'Enviado'}
+                        {(erro || errors.email || errors.nome) && "!"}
                         {!loading && !erro && !errors.email && !errors.nome && !successAnimation && 'Enviar'}
                     </button>
                     {successAnimation &&
