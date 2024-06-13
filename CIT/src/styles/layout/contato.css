@@ -35,7 +35,7 @@ button[data-success="true"] ~ .growing-bg-success {
         background: #008000;
         border-radius: .5rem;
     }
-    80% {
+    70% {
         color: #FFF;
         background: #008000;
     }
@@ -99,5 +99,77 @@ button[data-success="true"] ~ .growing-bg-success {
 
     100% {
         transform: translateX(0);
+    }
+}
+
+.checkmark__circle{
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: white;
+    fill: #7ac142;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    animation-delay: .5s;
+}
+
+.checkmark{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin: 10% auto;
+
+    animation: opacityCheckMark linear 3s;
+}
+
+.checkmark__check{
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+    animation-delay: .5s;
+}
+
+@keyframes stroke{
+    100%{stroke-dashoffset: 0}
+}
+
+@keyframes scale{
+    0%, 100%{
+        transform: none
+    }
+    50%{
+        transform: scale3d(1.1, 1.1, 1)
+    }
+}
+@keyframes fill{
+    0% {
+        fill: none;
+    }
+    100%{
+        fill: #7ac142
+    }
+}
+
+@keyframes opacityCheckMark {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0;
+    }
+    13%{
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
