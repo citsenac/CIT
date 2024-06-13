@@ -4,6 +4,7 @@ import Conhecimentos from "./components/Conhecimentos/Conhecimentos";
 import Contato from './components/Contato/Contato';
 import Depoimentos from './components/Depoimentos/Depoimentos';
 import Equipe from './components/Equipe/Equipe';
+import Footer from './components/Footer/Footer';
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Projetos from "./components/Projetos/Projetos";
@@ -92,6 +93,7 @@ function App() {
       <Depoimentos target={sections[3].target} />
       <Equipe target={sections[4].target} />
       <Contato target={sections[5].target} />
+      <Footer />
       {/* </>} */}
     </main>
   )
