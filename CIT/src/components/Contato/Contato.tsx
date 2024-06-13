@@ -93,11 +93,11 @@ export default function Contato({target}: {target: string}) {
     }
 
     return (
-        <section id={target} className="relative mt-16 px-2 grid grid-cols-2 grid-rows-5">
-            <h3 className="text-2xl font-semibold text-center text-white mx-auto poppins col-span-2 row-span-1 md:col-span-1">
+        <section id={target} className="relative mt-16 px-2 md:px-0 md:mx-auto md:max-w-4xl grid grid-cols-2 grid-rows-5 md:grid-rows-2 md:gap-x-20">
+            <h3 className="text-2xl md:text-4xl md:pr-20 font-semibold text-center md:text-start md:flex md:items-end md:justify-start text-white mx-auto poppins col-span-2 row-span-1 md:col-span-1">
                 Entre em contato com a gente
             </h3>
-            <form onSubmit={handleFormSubmit} className="w-full col-span-2 row-span-3 md:col-span-1 md:row-span-6">
+            <form onSubmit={handleFormSubmit} className="w-full col-span-2 row-span-3 md:col-span-1 md:row-span-2">
                 <div className="flex flex-col gap-y-2 mb-6 relative">
                     <label htmlFor="nome" className="text-white poppins font-semibold text-lg ml-4">
                         Nome
@@ -152,7 +152,7 @@ export default function Contato({target}: {target: string}) {
                     }
                 </div>
             </form>
-            <span className="mt-3 col-span-2 row-span-1 md:col-span-1 sf-pro-display text-white text-lg">
+            <span className="mt-3 col-span-2 row-span-1 md:col-span-1 sf-pro-display text-white text-lg md:text-xl">
                 Ao inserir seu nome e e-mail, receberemos suas informações e entraremos em contato com você o mais breve possível.
             </span>
         </section>
