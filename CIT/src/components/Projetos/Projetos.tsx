@@ -55,13 +55,13 @@ export default function Projetos({target}: {target: string}) {
             <div className="w-full box-border bg-[#989898] bg-opacity-30 border-y-2 border-solid border-[#989898] py-12">
                 <swiper-container
                     class="w-full"
-                    space-between={30}
+                    space-between={50}
                     slides-per-view={width < 660 ? 1.5 : (width < 768 ? 2.5 : (width < 1024 ? 3.5 : 4.5))}
                     centered-slides={true}
                     loop={true}
                 >
                     {projetos.map((projeto) => (
-                            <swiper-slide key={projeto.id}>
+                            <swiper-slide key={projeto.id} class="rounded-2xl">
                                     <Projeto toggleModal={() => toggleModal(projeto)} projeto={projeto} />
                             </swiper-slide>
                         ))
