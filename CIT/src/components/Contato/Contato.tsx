@@ -96,6 +96,12 @@ export default function Contato({target}: {target: string}) {
         )
     }
 
+    let animate: boolean = false;
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        animate = true;
+    }
+
     return (
         <section id={target} className="relative pt-16 px-2 md:px-0 md:mx-auto md:max-w-4xl grid grid-cols-2 grid-rows-5 md:grid-rows-2 md:gap-x-20">
             <h3 className="text-2xl md:text-4xl md:pr-20 font-semibold text-center md:text-start md:flex md:items-end md:justify-start text-white mx-auto poppins col-span-2 row-span-1 md:col-span-1">
@@ -125,7 +131,7 @@ export default function Contato({target}: {target: string}) {
                     {erro && <span className="absolute -bottom-6 left-0 text-red-500">Email inválido</span>}
                 </div>
                 <div className={`w-full relative flex justify-center items-center mb-6 `}>
-                    <button className={`w-full py-3 rounded-lg flex justify-center items-center text-white bg-[#410C85] font-medium text-base poppins ${loading || !formData.nome || !formData.email || successAnimation || erro || errors.email || errors.nome ? 'hover:cursor-not-allowed' : 'cursor-pointer'}`}
+                    <button className={`w-full py-3 rounded-lg flex justify-center items-center text-white bg-[#410C85] font-medium text-base poppins ${loading || !formData.nome || !formData.email || successAnimation || erro || errors.email || errors.nome ? 'hover:cursor-not-allowed' : 'cursor-pointer'} ${(loading || !formData.nome || !formData.email || successAnimation || erro || errors.email || errors.nome) && animate ? 'hover:scale-105 transition duration-[0.4s] ease-in-out' : ''}`}
                         disabled={loading || !formData.nome || !formData.email || successAnimation || erro}
                         data-invalid={erro || errors.email || errors.nome ? 'true' : 'false'}
                         data-success={successAnimation ? 'true' : 'false'}
