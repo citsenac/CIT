@@ -17,7 +17,7 @@ export default function Conhecimentos({target}: {target: string}) {
     }
 
     return (
-        <section id={target} className="relative mt-24">
+        <section id={target} className="relative pt-24">
 
             <h3 className="text-2xl font-semibold text-white text-center mb-5 poppins">
                 Um pouco dos nossos conhecimentos

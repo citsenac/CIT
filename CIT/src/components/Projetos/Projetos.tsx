@@ -46,7 +46,7 @@ export default function Projetos({target}: {target: string}) {
     }
 
     return (
-        <section id={target} className="relative mt-24">
+        <section id={target} className="relative pt-24">
 
             <h3 className="text-2xl md:text-5xl font-semibold text-white text-center mb-8 max-w-64 md:max-w-2xl mx-auto poppins">
                 Dê uma olhada nos nossos projetos

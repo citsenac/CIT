@@ -3,7 +3,7 @@ import Topico from "./Topico";
 
 export default function SobreNos({target}: {target: string}) {
     return (
-        <section id={target} className="relative mt-24 max-w-[22rem] md:max-w-6xl mx-auto">
+        <section id={target} className="relative pt-24 max-w-[22rem] md:max-w-6xl mx-auto">
 
             {/* Glow */}
             <div className="absolute rounded-full top-0 h-full w-full bg-[#5200ff] blur-[400px] md:blur-[800px]"></div>

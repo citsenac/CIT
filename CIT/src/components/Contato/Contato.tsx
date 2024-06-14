@@ -97,7 +97,7 @@ export default function Contato({target}: {target: string}) {
     }
 
     return (
-        <section id={target} className="relative mt-16 px-2 md:px-0 md:mx-auto md:max-w-4xl grid grid-cols-2 grid-rows-5 md:grid-rows-2 md:gap-x-20">
+        <section id={target} className="relative pt-16 px-2 md:px-0 md:mx-auto md:max-w-4xl grid grid-cols-2 grid-rows-5 md:grid-rows-2 md:gap-x-20">
             <h3 className="text-2xl md:text-4xl md:pr-20 font-semibold text-center md:text-start md:flex md:items-end md:justify-start text-white mx-auto poppins col-span-2 row-span-1 md:col-span-1">
                 Entre em contato com a gente
             </h3>
