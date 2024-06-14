@@ -10,7 +10,7 @@ export default function ModalProjeto({projeto}: {projeto: {imgs: string[], title
                         <swiper-container class="w-full" slides-per-view={1} loop={true} centered-slides={true} pagination={true}>
                             {projeto.imgs.map((img, i) => (
                                 <swiper-slide key={i}>
-                                    <img src={img} alt={projeto.title} className="rounded-2xl w-80 md:w-full h-48 md:h-80 object-cover" />
+                                    <img src={img} alt={projeto.title} className="rounded-2xl w-80 sm:mx-auto md:w-full h-48 md:h-80 object-cover" />
                                 </swiper-slide>
                             ))
                         }
