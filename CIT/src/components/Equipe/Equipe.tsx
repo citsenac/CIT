@@ -16,7 +16,7 @@ export default function Equipe({target}: {target: string}) {
     ]
 
     return (
-        <section id={target} className="relative md:max-w-4xl md:mx-auto pt-16 mx-2 border-y border-solid border-[#606060] flex flex-col items-center">
+        <section id={target} className="relative md:max-w-4xl md:mx-auto mt-16 mx-2 border-y border-solid border-[#606060] flex flex-col items-center">
 
             <div className="my-16 flex flex-col md:flex-row items-center gap-y-16 md:gap-x-32 lg:gap-x-96">
                 {/* Alunos */}
