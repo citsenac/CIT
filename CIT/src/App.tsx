@@ -1,4 +1,5 @@
 // import { useEffect, useState } from "react";
+import { useState } from 'react';
 import { register } from 'swiper/element/bundle';
 import Conhecimentos from "./components/Conhecimentos/Conhecimentos";
 import Contato from './components/Contato/Contato';
@@ -43,8 +44,10 @@ function App() {
     }
   ];
 
+  const [loadingPage, setLoadingPage] = useState(true);
+
   // const [citData, setCITData] = useState(null);
-  // const [loading, setLoading] = useState(true);
+  // const [loadingDb, setLoadingDb] = useState(true);
   // const [error, setError] = useState(null);
 
   // const email = import.meta.env.VITE_FIREBASE_AUTH_EMAIL;
@@ -65,36 +68,39 @@ function App() {
   //       console.error("Authentication error:", authError);
   //       setError(authError);
   //     } finally {
-  //       setLoading(false);
+  //       setLoadingDb(false);
   //     }
   //   };
   //   authenticateAndFetchData();
   // }, []);
-
-  // if (citData) {
-  //   console.log(citData);
-  // }
-  // if (loading) {
-  //   console.log(loading);
-  // }
   // if (error) {
   //   console.log(error);
   // }
 
+  setTimeout(() => {
+    setLoadingPage(false);
+  }, 4000);
+
   return (
     <main className="bg-gradient-to-b from-[#232323] via-[#262626] via-63% to-[#161017] min-h-screen overflow-x-hidden">
-      {/* {!loading &&
-      <> */}
-      <Navbar sections={sections} />
-      <Header />
-      <SobreNos target={sections[0].target} />
-      <Projetos target={sections[1].target} />
-      <Conhecimentos target={sections[2].target} />
-      <Depoimentos target={sections[3].target} />
-      <Equipe target={sections[4].target} />
-      <Contato target={sections[5].target} />
-      <Footer />
-      {/* </>} */}
+      {loadingPage && 
+        <div className="w-full h-screen flex items-center justify-center">
+          <video className="max-h-96 w-auto aspect-video object-cover" src="cit-loading.mp4" autoPlay muted loop></video>
+          {/* <img src="logo-cit.svg" alt="" className='w-2' /> */}
+        </div>
+      }
+      {!loadingPage &&
+      <>
+        <Navbar sections={sections} />
+        <Header />
+        <SobreNos target={sections[0].target} />
+        <Projetos target={sections[1].target} />
+        <Conhecimentos target={sections[2].target} />
+        <Depoimentos target={sections[3].target} />
+        <Equipe target={sections[4].target} />
+        <Contato target={sections[5].target} />
+        <Footer />
+      </>}
     </main>
   )
 }
