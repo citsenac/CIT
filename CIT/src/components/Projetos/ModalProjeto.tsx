@@ -17,7 +17,7 @@ export default function ModalProjeto({projeto}: {projeto: {imgs: string[], title
                         </swiper-container>
                     }
                     { projeto.imgs.length === 1 &&
-                        <img src={projeto.imgs[0]} alt={projeto.title} className="rounded-2xl w-80 h-48 object-cover" />
+                        <img src={projeto.imgs[0]} alt={projeto.title} className="rounded-2xl w-80 md:w-full h-48 md:h-80 object-cover" />
                     }
                 </div>
 
