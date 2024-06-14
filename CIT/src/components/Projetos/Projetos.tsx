@@ -19,6 +19,12 @@ export default function Projetos({target}: {target: string}) {
         {id:'10', imgs: ["test-img.png", "test-img.png", "test-img.png"], title: "Projeto 3", description: "Descricão do projeto 3"},
     ];
 
+    let animate: boolean = false;
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        animate = true;
+    }
+
     const [scrollY, setScrollY] = useState(0);
     const [elementOffsetTop, setElementOffsetTop] = useState(0);
     const animatedBoxRef = React.createRef();
@@ -93,7 +99,7 @@ export default function Projetos({target}: {target: string}) {
     return (
         <section id={target} className="relative pt-24" >
 
-            <div style={{transform: `translateY(${calculateTranslateY()}px)`, opacity: calculateOpacity()}}>
+            <div style={animate ? {transform: `translateY(${calculateTranslateY()}px)`, opacity: calculateOpacity()} : {}} >
                 <h3 className="text-2xl md:text-5xl font-semibold text-white text-center mb-8 max-w-64 md:max-w-2xl mx-auto poppins">
                     Dê uma olhada nos nossos projetos
                 </h3>

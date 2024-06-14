@@ -13,6 +13,12 @@ export default function Depoimentos({target}: {target: string}) {
         {id: "6",img: "test-profile.png", nome: "Nome do Aluno", curso: "Sistemas para Internet", depoimento: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"},
     ]
 
+    let animate: boolean = false;
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        animate = true;
+    }
+
     const [scrollY, setScrollY] = useState(0);
     const [elementOffsetTop, setElementOffsetTop] = useState(0);
     const animatedBoxRef = React.createRef();
@@ -53,7 +59,7 @@ export default function Depoimentos({target}: {target: string}) {
 
             <img src="logo-cit-outline.svg" alt="Logo do CIT, em formato de uma seta para a direita, com textura de tecnologia dentro dele, em formato só de linhas" className="absolute top-1/2 left-0 w-full h-[32rem] md:top-0 md:h-[70rem] md:-translate-x-1/4" />
 
-            <div style={{opacity: calculateOpacity()}}>
+            <div style={animate ? {opacity: calculateOpacity()} : {}}>
                 <div className="max-w-64 md:mx-auto md:max-w-4xl text-start mb-10 relative z-1">
                     <h3 className="text-2xl md:text-4xl font-semibold text-white mb-2 mx-auto poppins">
                         Depoimentos

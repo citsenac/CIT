@@ -3,6 +3,13 @@ import GlassContainer from "../Partials/GlassContainer";
 import Topico from "./Topico";
 
 export default function SobreNos({target}: {target: string}) {
+    
+    let animate: boolean = false;
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        animate = true;
+    }
+
     const [scrollY, setScrollY] = useState(0);
     const [elementOffsetTop, setElementOffsetTop] = useState(0);
     const animatedBoxRef = React.createRef();
@@ -53,7 +60,7 @@ export default function SobreNos({target}: {target: string}) {
             {/* Glow */}
             <div className="absolute rounded-full top-0 h-full w-full bg-[#5200ff] blur-[400px] md:blur-[800px]"></div>
 
-            <GlassContainer addStyle={{transform: `translateY(${calculateTranslateY()}px)`, opacity: calculateOpacity()}} >
+            <GlassContainer addStyle={animate ? {transform: `translateY(${calculateTranslateY()}px)`, opacity: calculateOpacity()} : undefined} >
                 <div className="w-full py-6 px-4 md:px-40 md:pt-9 md:pb-20 relative z-1">
                     <h3 className="text-2xl md:text-5xl lg:text-4xl text-white text-center font-medium poppins mb-10">O que fazemos?</h3>
 
