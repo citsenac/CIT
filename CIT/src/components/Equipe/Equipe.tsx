@@ -1,20 +1,7 @@
 import Aluno from "./Aluno";
 import Disciplinar from "./Disciplinar";
 
-export default function Equipe({target}: {target: string}) {
-
-    const alunos = [
-        {id: "0", img: "test-profile.png", nome: "Nome do Aluno", linkedin: "https://www.linkedin.com/in/brunovicenters/"},
-        {id: "1", img: "test-profile.png", nome: "Nome do Aluno", linkedin: "https://www.linkedin.com/in/brunovicenters/"},
-        {id: "2",img: "test-profile.png", nome: "Nome do Aluno", linkedin: "https://www.linkedin.com/in/brunovicenters/"}
-    ]
-
-    const funcionario = [
-        {id: "0", img: "test-profile.png", nome: "Nome do Funcionario", cargo: "Cargo do Funcionario"},
-        {id: "1", img: "test-profile.png", nome: "Nome do Funcionario", cargo: "Cargo do Funcionario"},
-        {id: "2",img: "test-profile.png", nome: "Nome do Funcionario", cargo: "Cargo do Funcionario"}
-    ]
-
+export default function Equipe({target, alunos, professores}: {target: string, alunos: {id: number, img: string, nome: string, linkedin: string}[], professores: {id: number, img: string, nome: string, cargo: string}[]}) {
     return (
         <section id={target} className="relative md:max-w-4xl md:mx-auto mt-16 mx-2 border-y border-solid border-[#606060] flex flex-col items-center">
 
@@ -39,7 +26,7 @@ export default function Equipe({target}: {target: string}) {
                         Equipe Disciplinar
                     </h3>
                     <swiper-container effect="cards" class="w-64" loop='true' grab-cursor="true">
-                        {funcionario.map((funcionario) => (
+                        {professores.map((funcionario) => (
                             <swiper-slide key={funcionario.id}>
                                 <Disciplinar funcionario={funcionario} />
                             </swiper-slide>

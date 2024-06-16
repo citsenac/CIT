@@ -1,8 +1,6 @@
 import useWindowDimensions from "../Utils/WindowDimensions";
 
-export default function Conhecimentos({target}: {target: string}) {
-
-    const conhecimentos = ['html', 'css', 'javascript', 'angular', 'laravel', 'java', 'react', 'inteligência artificial', 'C#', 'python', 'React Native', 'tailwind css', 'MUI', 'Bootstrap', 'SQL', 'ExpressJS', 'MongoDB', 'Adobe', 'Figma', 'Linux', 'JFrame', '.NET', 'SwiftUI', 'Spring', 'Ionic', 'C']
+export default function Conhecimentos({target, conhecimentos}: {target: string, conhecimentos: {id: number, nome: string, icon: string, corleft: string, corright: string}[]}) {
 
     const { width } = useWindowDimensions();
     
@@ -25,27 +23,27 @@ export default function Conhecimentos({target}: {target: string}) {
         
             <div className="relative py-3 flex flex-col gap-y-3 max-w-full scroller" data-animated={scrollabe ? "true" : 'false'}>
 
-                {conhecimentosDisplay.map((conhecimento, index) => (
+                {conhecimentosDisplay.map((conhecimentoGroup, index) => (
                     <ul className="w-full flex flex-wrap scroller-inner odd:self-end" key={index}>
-                        {conhecimento.map((conhecimento, index) => (
-                            <li className={`capitalize min-w-fit p-2 flex items-center justify-center gap-x-3 h-10 text-sm font-semibold text-white bg-gradient-to-br from-[#351B33] to-[#9B4F96] poppins`} key={index}>
-                                <img src="test-icon-stacks.svg" alt="Stack icon" className="w-6 h-6" />
-                                {conhecimento}
+                        {conhecimentoGroup.map((conhecimento) => (
+                            <li className={`capitalize min-w-fit p-2 flex items-center justify-center gap-x-3 h-10 text-sm font-semibold text-white bg-gradient-to-br from-[${conhecimento.corleft}] to-[${conhecimento.corright}] poppins`} key={conhecimento.id}>
+                                <img src={conhecimento.icon} alt="Stack icon" className="w-6 h-6" />
+                                {conhecimento.nome}
                             </li>
                         ))}
 
                         {/* Duplicate to make scroll effect */}
-                        {scrollabe && conhecimento.map((conhecimento, index) => (
-                            <li aria-hidden="true" className={`capitalize min-w-fit p-2 flex items-center justify-center gap-x-3 h-10 text-sm font-semibold text-white bg-gradient-to-br from-[#351B33] to-[#9B4F96] poppins`} key={index}>
-                                <img src="test-icon-stacks.svg" alt="Stack icon" className="w-6 h-6" />
-                                {conhecimento}
-                            </li>
+                        {scrollabe && conhecimentoGroup.map((conhecimento) => (
+                            <li className={`capitalize min-w-fit p-2 flex items-center justify-center gap-x-3 h-10 text-sm font-semibold text-white bg-gradient-to-br from-[${conhecimento.corleft}] to-[${conhecimento.corright}] poppins`} key={conhecimento.id}>
+                            <img src={conhecimento.icon} alt="Stack icon" className="w-6 h-6" />
+                            {conhecimento.nome}
+                        </li>
                         ))}
-                        {scrollabe && width > 1024 && conhecimento.map((conhecimento, index) => (
-                            <li aria-hidden="true" className={`capitalize min-w-fit p-2 flex items-center justify-center gap-x-3 h-10 text-sm font-semibold text-white bg-gradient-to-br from-[#351B33] to-[#9B4F96] poppins`} key={index}>
-                                <img src="test-icon-stacks.svg" alt="Stack icon" className="w-6 h-6" />
-                                {conhecimento}
-                            </li>
+                        {scrollabe && width > 1024 && conhecimentoGroup.map((conhecimento) => (
+                            <li className={`capitalize min-w-fit p-2 flex items-center justify-center gap-x-3 h-10 text-sm font-semibold text-white bg-gradient-to-br from-[${conhecimento.corleft}] to-[${conhecimento.corright}] poppins`} key={conhecimento.id}>
+                            <img src={conhecimento.icon} alt="Stack icon" className="w-6 h-6" />
+                            {conhecimento.nome}
+                        </li>
                         ))}
                     </ul>
                 ))}

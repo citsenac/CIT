@@ -2,16 +2,7 @@ import React, { useEffect, useState } from "react";
 import useWindowDimensions from "../Utils/WindowDimensions";
 import Depoimento from "./Depoimento";
 
-export default function Depoimentos({target}: {target: string}) {
-    const depoimentos = [
-        {id: "0", img: "test-profile.png", nome: "Nome do Aluno", curso: "Sistemas para Internet", depoimento: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"},
-        {id: "1", img: "test-profile.png", nome: "Nome do Aluno", curso: "Sistemas para Internet", depoimento: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"},
-        {id: "2",img: "test-profile.png", nome: "Nome do Aluno", curso: "Sistemas para Internet", depoimento: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"},
-        {id: "3",img: "test-profile.png", nome: "Nome do Aluno", curso: "Sistemas para Internet", depoimento: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"},
-        {id: "4",img: "test-profile.png", nome: "Nome do Aluno", curso: "Sistemas para Internet", depoimento: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"},
-        {id: "5",img: "test-profile.png", nome: "Nome do Aluno", curso: "Sistemas para Internet", depoimento: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"},
-        {id: "6",img: "test-profile.png", nome: "Nome do Aluno", curso: "Sistemas para Internet", depoimento: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"},
-    ]
+export default function Depoimentos({target, depoimentos}: {target: string, depoimentos: {id: number, img: string, nome: string, curso: string, depoimento: string}[]}) {
 
     let animate: boolean = false;
 
