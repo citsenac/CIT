@@ -42,9 +42,9 @@ export default function Navbar({sections}: {sections: {name: string, target: str
 
             { open && (
                 <>
-                    <div onClick={toggleMenu} className="h-screen w-screen absolute top-0 left-0 bg-black/40 z-40"></div>
+                    <div onClick={toggleMenu} className="navbar-mobile-backscreen h-screen w-screen absolute top-0 left-0 bg-black/40 z-40"></div>
 
-                    <nav className="absolute z-50 top-0 left-0 w-2/3 p-6 h-screen bg-gradient-to-b from-[#232323] to-[#262626]">
+                    <nav className="navbar-mobile absolute z-50 top-0 left-0 w-2/3 p-6 h-screen bg-gradient-to-b from-[#232323] to-[#262626]">
                         <button onClick={toggleMenu} className="mb-10">
                             <img src="/icons/hamb-nav.svg" alt="Ícone do menu" className="w-8 h-8" />
                         </button>

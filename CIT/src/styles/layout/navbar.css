@@ -32,3 +32,54 @@ div:has(+ .nav-link:hover) {
         opacity: 1;
     }
 }
+
+.navbar-mobile-backscreen {
+    animation: .1s apperaringBG linear forwards;
+}
+
+@keyframes apperaringBG {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.navbar-mobile {
+    overflow: hidden;
+    animation: slideIn .3s ease-in-out;
+}
+
+.navbar-mobile > * {
+    animation: navMobileContentAppearing .5s linear forwards;
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 66%;
+    }
+}
+
+@keyframes navMobileContentAppearing {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    25% {
+        display: none;
+        opacity: 0;
+        transform: translateX(-20%);
+    }
+    100% {
+        display: auto;
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
