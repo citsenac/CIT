@@ -79,14 +79,13 @@ function App() {
 
   setTimeout(() => {
     setLoadingPage(false);
-  }, 4000);
+  }, 6100);
 
   return (
     <main className="bg-gradient-to-b from-[#232323] via-[#262626] via-63% to-[#161017] min-h-screen overflow-x-hidden">
       {loadingPage && 
         <div className="w-full h-screen flex items-center justify-center">
-          {/* <video className="max-h-96 w-auto aspect-video object-cover" src="cit-loading.mp4" autoPlay muted loop></video> */}
-          <img src="logo-cit.svg" alt="" className='w-[10rem] aspect-square' />
+          <img src="cit-loading.gif" alt="Logo do CIT carregando" className='w-72 aspect-square' />
         </div>
       }
       {!loadingPage &&
