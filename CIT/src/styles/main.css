@@ -7,6 +7,7 @@
 @import './module/glass-container.css';
 @import './module/glitch.css';
 @import './module/swiper.css';
+@import './module/modal.css';
 
 /* Tailwind imports */
 @tailwind base;
