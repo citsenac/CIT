@@ -5,7 +5,7 @@ import useWindowDimensions from '../Utils/WindowDimensions';
 import ModalProjeto from './ModalProjeto';
 import Projeto from './Projeto';
 
-export default function Projetos({target, projetos}: {target: string, projetos: {id: number, img: string[], title: string, desc: string}[]}) {
+export default function Projetos({target, projetos}: {target: string, projetos: {id: number, imgs: string[], title: string, desc: string}[]}) {
 
     let animate: boolean = false;
 
@@ -63,9 +63,9 @@ export default function Projetos({target, projetos}: {target: string, projetos: 
 
     const [open, setOpen] = useState(false);
 
-    const [projeto, setProjeto] = useState({img: [''], title: '', desc: ''});
+    const [projeto, setProjeto] = useState({id: 0, imgs: [''], title: '', desc: ''});
 
-    const toggleModal = (projeto: {img: string[], title: string, desc: string}) => {
+    const toggleModal = (projeto: {id: number, imgs: string[], title: string, desc: string}) => {
         setOpen( prev => {
                 return !prev
             }
@@ -99,9 +99,10 @@ export default function Projetos({target, projetos}: {target: string, projetos: 
                         slides-per-view={width < 660 ? 1.5 : (width < 768 ? 2.5 : (width < 1024 ? 3.5 : 4.5))}
                         centered-slides={true}
                         loop={true}
+                        slides-per-group={3}
                     >
                         {projetos.map((projeto) => (
-                                <swiper-slide key={projeto.id} class="rounded-2xl">
+                                <swiper-slide key={projeto.id} class="rounded-2xl cards-projetos">
                                         <Projeto toggleModal={() => toggleModal(projeto)} projeto={projeto} />
                                 </swiper-slide>
                             ))

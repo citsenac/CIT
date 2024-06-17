@@ -82,12 +82,12 @@ function App() {
 
   return (
     <main className="bg-gradient-to-b from-[#232323] via-[#262626] via-63% to-[#161017] min-h-screen overflow-x-hidden">
-      {loadingPage &&
+      {(loadingPage || loadingDb) &&
         <div className="w-full h-screen flex items-center justify-center">
           <img src="cit-loading.gif" alt="Logo do CIT carregando" className='w-72 aspect-square' />
         </div>
       }
-      {!loadingPage && !loadingDb &&
+      {!loadingPage && !loadingDb && citData &&
       <>
         <Navbar sections={sections} />
         <Header />

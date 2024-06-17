@@ -1,5 +1,5 @@
 
-export default function ModalProjeto({projeto}: {projeto: {imgs: string[], title: string, description: string}}) {
+export default function ModalProjeto({projeto}: {projeto: {id: number, imgs: string[], title: string, desc: string}}) {
     
     return (
             
@@ -21,7 +21,7 @@ export default function ModalProjeto({projeto}: {projeto: {imgs: string[], title
                     }
                 </div>
 
-                <p className="text-white sf-pro-display text-sm text-left">{projeto.description}</p>
+                <p className="text-white sf-pro-display text-sm text-left">{projeto.desc}</p>
             </div>
     )
 }
