@@ -99,10 +99,9 @@ export default function Projetos({target, projetos}: {target: string, projetos: 
                         slides-per-view={width < 660 ? 1.5 : (width < 768 ? 2.5 : (width < 1024 ? 3.5 : 4.5))}
                         centered-slides={true}
                         loop={true}
-                        slides-per-group={3}
                     >
                         {projetos.map((projeto) => (
-                                <swiper-slide key={projeto.id} class="rounded-2xl cards-projetos">
+                                <swiper-slide key={projeto.id} class="rounded-2xl">
                                         <Projeto toggleModal={() => toggleModal(projeto)} projeto={projeto} />
                                 </swiper-slide>
                             ))
