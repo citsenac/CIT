@@ -1,6 +1,6 @@
 import GlassContainer from "../Partials/GlassContainer";
 
-export default function Header() {
+export default function Header({sections}: {sections: {name: string, target: string}[]}) {
     return (
         <header className="md:mt-40">
             <h3 className="relative z-1 glitch-trans text-xs flex items-center justify-center gap-x-4 text-glow">
@@ -14,12 +14,12 @@ export default function Header() {
 
             <div className="max-w-56 md:max-w-56 mx-auto text-center">
                 <GlassContainer>
-                    <a href="#contato" className="w-full block py-4 px-9 font-medium poppins text-sm text-white">
+                    <a href={`#${sections[5].target}`} className="w-full block py-4 px-9 font-medium poppins text-sm text-white">
                             Mande um e-mail
                     </a>
                 </GlassContainer>
 
-                <a href="#sobre-nos" className="text-[0.65rem] md:text-xs text-center text-[#808080] hover:text-[#fff] transition ease-in-out poppins">
+                <a href={`#${sections[0].target}`} className="text-[0.65rem] md:text-xs text-center text-[#808080] hover:text-[#fff] transition ease-in-out poppins">
                     Ou conheça um pouco sobre nós
                 </a>
             </div>
