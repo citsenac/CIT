@@ -1,6 +1,6 @@
 import useWindowDimensions from "../Utils/WindowDimensions";
 
-export default function Conhecimentos({target, conhecimentos}: {target: string, conhecimentos: {id: number, nome: string, icon: string, corleft: string, corright: string}[]}) {
+export default function Conhecimentos({target, conhecimentos}: {target: string, conhecimentos: {id: number, nome: string, icon: string}[]}) {
 
     const { width } = useWindowDimensions();
     
