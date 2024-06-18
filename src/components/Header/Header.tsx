@@ -8,8 +8,8 @@ export default function Header() {
                 <span className="text-white font-bold text-xs md:text-2xl">Centro de Inovação e Tecnologia</span>
             </h3>
 
-            <h2 data-glitch="Lorem Ipsum is simply dummy text of the printing." className="mb-12 relative z-1 text-[2rem] md:text-8xl font-semibold text-white text-center max-w-64 md:max-w-4xl mx-auto glitch-move">
-                Lorem Ipsum is simply dummy text of the printing.
+            <h2 data-glitch="Impulsionado pela Inovação, Definido pela Excelência" className="mb-12 relative z-1 text-[2rem] md:text-8xl font-semibold text-white text-center max-w-64 md:max-w-4xl mx-auto glitch-move">
+                Impulsionado pela Inovação, Definido pela Excelência
             </h2>
 
             <div className="max-w-56 md:max-w-56 mx-auto text-center">
@@ -19,9 +19,9 @@ export default function Header() {
                     </a>
                 </GlassContainer>
 
-                <span className="text-[0.65rem] md:text-xs text-center text-[#808080] poppins">
+                <a href="#sobre-nos" className="text-[0.65rem] md:text-xs text-center text-[#808080] hover:text-[#fff] transition ease-in-out poppins">
                     Ou conheça um pouco sobre nós
-                </span>
+                </a>
             </div>
         </header>
     )
