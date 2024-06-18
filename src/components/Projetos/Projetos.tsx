@@ -7,12 +7,14 @@ import Projeto from './Projeto';
 
 export default function Projetos({target, projetos}: {target: string, projetos: {id: number, imgs: string[], title: string, desc: string}[]}) {
 
+    // Reduce motion check
     let animate: boolean = false;
 
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         animate = true;
     }
 
+    // Get window height and set animation
     const [scrollY, setScrollY] = useState(0);
     const [elementOffsetTop, setElementOffsetTop] = useState(0);
     const animatedBoxRef = React.createRef();
@@ -57,8 +59,10 @@ export default function Projetos({target, projetos}: {target: string, projetos: 
       }
     };
 
+    // Get window width to set carousel content
     const { width } = useWindowDimensions();
 
+    // Set enviroment to handle modal opening and closing
     scrolllock.enablePageScroll();
 
     const [open, setOpen] = useState(false);

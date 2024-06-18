@@ -12,6 +12,8 @@ div:has(+ .nav-link:hover) {
     backdrop-filter: blur(64px);
 }
 
+/* Set animations */
+
 @keyframes openNav {
     0% {
         width: 0;

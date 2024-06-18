@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { SubmitHandler, useForm } from "react-hook-form";
 import SpinLoader from '../Partials/SpinLoader';
 
+// Define inputs types to react hook form
 type Inputs = {
     nome: string
     email: string
@@ -10,6 +11,7 @@ type Inputs = {
 
 export default function Contato({target}: {target: string}) {
 
+    // Set animation states' button
     const [erro, setErro] = useState(false);
     const [loading, setLoading] = useState(false);
     const [successAnimation, setSuccessAnimation] = useState(false);
@@ -40,6 +42,7 @@ export default function Contato({target}: {target: string}) {
         sendEmail();
     }
 
+    // Error messages for react hook form
     const registerOptions = {
         nome:{
             required: "Nome é obrigatório!",
@@ -82,11 +85,13 @@ export default function Contato({target}: {target: string}) {
         );
     };
     
+    // Handle form submit
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         handleSubmit(onSubmit)();
     };
 
+    // Success animation duration
     if(successAnimation) {
         setTimeout(
             () => {
@@ -96,6 +101,7 @@ export default function Contato({target}: {target: string}) {
         )
     }
 
+    // Reduce motion check
     let animate: boolean = false;
 
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {

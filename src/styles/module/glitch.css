@@ -1,3 +1,5 @@
+/* Glitch noise effect */
+
 .glitch-move:before {
     content: attr(data-glitch);
     position: absolute;
@@ -195,6 +197,8 @@
         clip: rect(67px, 9999px, 122px, 0);
     }
 }
+
+/* Glitch shift effect */
 
 .glitch-trans {
     animation: shift 3s ease-in-out infinite alternate;

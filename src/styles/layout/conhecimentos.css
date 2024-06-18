@@ -20,6 +20,8 @@
 
 }
 
+
+/* Set scrolling animations */
 .scroller[data-animated="true"] .scroller-inner:nth-child(odd) {
     animation: scrollRight var(--animation-duration, 30s) linear infinite;
 }

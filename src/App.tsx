@@ -14,8 +14,10 @@ import './styles/main.css';
 
 function App() {
 
+  // Initialize Swiper
   register();
 
+  // Define sections
   const sections: {name: string, target: string}[] = [
     {
         name: "Sobre nós",
@@ -43,12 +45,14 @@ function App() {
     }
   ];
 
+  // Define states
   const [loadingPage, setLoadingPage] = useState(true);
 
   const [citData, setCITData] = useState(null);
   const [loadingDb, setLoadingDb] = useState(true);
   const [error, setError] = useState(null);
-
+  
+  // Authenticate and fetch cit data
   const email = import.meta.env.VITE_FIREBASE_AUTH_EMAIL;
   const password = import.meta.env.VITE_FIREBASE_AUTH_PASSWORD;
 
@@ -76,21 +80,25 @@ function App() {
     console.log(error);
   }
 
+  // Set Timeout to load page
   setTimeout(() => {
     setLoadingPage(false);
   }, 6100);
 
   return (
     <main className="bg-gradient-to-b from-[#232323] via-[#262626] via-63% to-[#161017] min-h-screen overflow-x-hidden">
+      {/* If is loading and cit data not retrieved, show GIF */}
       {(loadingPage || loadingDb) &&
         <div className="w-full h-screen flex items-center justify-center">
           <img src="cit-loading.gif" alt="Logo do CIT carregando" className='w-72 aspect-square' />
         </div>
       }
+
+      {/* If is not loading and cit data retrieved, show content */}
       {!loadingPage && !loadingDb && citData &&
       <>
         <Navbar sections={sections} />
-        <Header />
+        <Header sections={sections} />
         <SobreNos target={sections[0].target} />
         <Projetos target={sections[1].target} projetos={citData.projetos} />
         <Conhecimentos target={sections[2].target} conhecimentos={citData.stacks} />

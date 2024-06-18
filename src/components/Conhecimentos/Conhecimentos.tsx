@@ -2,12 +2,15 @@ import useWindowDimensions from "../Utils/WindowDimensions";
 
 export default function Conhecimentos({target, conhecimentos}: {target: string, conhecimentos: {id: number, nome: string, icon: string}[]}) {
 
+    // Get window width to set animation content
     const { width } = useWindowDimensions();
     
+    // Split conhecimentos in groups of 3
     const total = Math.ceil(conhecimentos.length / 3);
 
     const conhecimentosDisplay = [conhecimentos.slice(0, total), conhecimentos.slice(total, total * 2), conhecimentos.slice(total * 2, total * 3)]
 
+    // Reduce motion check
     let scrollabe: boolean = false;
 
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -39,6 +42,8 @@ export default function Conhecimentos({target, conhecimentos}: {target: string, 
                             {conhecimento.nome}
                         </li>
                         ))}
+
+                        {/* Triplicate to make scroll effect in larger screens */}
                         {scrollabe && width > 1024 && conhecimentoGroup.map((conhecimento) => (
                             <li className={`capitalize min-w-fit rounded-lg p-2 flex items-center justify-center gap-x-3 h-10 text-sm font-semibold text-white bg-gradient-to-br from-[#303030] to-[#494949] border-solid border-[.5px] border-[#A5A5A5] poppins`} key={conhecimento.id}>
                             <img src={conhecimento.icon} alt="Stack icon" className="w-6 h-6" />

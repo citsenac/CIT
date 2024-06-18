@@ -4,12 +4,14 @@ import Depoimento from "./Depoimento";
 
 export default function Depoimentos({target, depoimentos}: {target: string, depoimentos: {id: number, img: string, nome: string, curso: string, depoimento: string}[]}) {
 
+    // Reduce motion check
     let animate: boolean = false;
 
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         animate = true;
     }
 
+    // Get window height and set animation
     const [scrollY, setScrollY] = useState(0);
     const [elementOffsetTop, setElementOffsetTop] = useState(0);
     const animatedBoxRef = React.createRef();

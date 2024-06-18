@@ -21,7 +21,8 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
 
-function fetchCITData(userId) {
+// Fetch data from the root of the database
+function fetchCITData() {
   return new Promise((resolve, reject) => {
     const userRef = ref(db, `/`);
     get(userRef)
