@@ -1,7 +1,7 @@
-export default function Depoimento({id, img, nome, curso, depoimento}: {id: string, img: string, nome: string, curso: string, depoimento: string}){
+export default function Depoimento({id, img, nome, curso, depoimento}: {id: number, img: string, nome: string, curso: string, depoimento: string}){
 
     return (
-        <div className="w-full h-[24rem] bg-[#1C1C1C] pt-4 pl-4 border-2 border-solid border-[#989898] rounded-lg flex flex-col">
+        <div id={id.toString()} className="w-full h-[24rem] bg-[#1C1C1C] pt-4 pl-4 border-2 border-solid border-[#989898] rounded-lg flex flex-col">
             <img src={img} alt={nome} className="w-14 aspect-square rounded-full object-cover" />
 
             <h4 className="mt-4 text-white font-medium sf-pro-display text-base">

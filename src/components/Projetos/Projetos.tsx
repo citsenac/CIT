@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import scrolllock from 'scroll-lock';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Modal from '../Partials/Modal';
 import useWindowDimensions from '../Utils/WindowDimensions';
 import ModalProjeto from './ModalProjeto';
@@ -17,7 +18,7 @@ export default function Projetos({target, projetos}: {target: string, projetos: 
     // Get window height and set animation
     const [scrollY, setScrollY] = useState(0);
     const [elementOffsetTop, setElementOffsetTop] = useState(0);
-    const animatedBoxRef = React.createRef();
+    const animatedBoxRef = React.createRef<HTMLElement>();
   
     useEffect(() => {
       const handleScroll = () => {
@@ -97,20 +98,20 @@ export default function Projetos({target, projetos}: {target: string, projetos: 
                 </h3>
     
                 <div className="w-full box-border bg-[#989898] bg-opacity-30 border-y-2 border-solid border-[#989898] py-12">
-                    <swiper-container
-                        class="w-full"
-                        space-between={50}
-                        slides-per-view={width < 660 ? 1.5 : (width < 768 ? 2.5 : (width < 1024 ? 3.5 : 4.5))}
-                        centered-slides={true}
+                    <Swiper
+                        className="w-full"
+                        spaceBetween={50}
+                        slidesPerView={width < 660 ? 1.5 : (width < 768 ? 2.5 : (width < 1024 ? 3.5 : 4.5))}
+                        centeredSlides={true}
                         loop={true}
                     >
                         {projetos.map((projeto) => (
-                                <swiper-slide key={projeto.id} class="rounded-2xl">
+                                <SwiperSlide key={projeto.id} className="rounded-2xl">
                                         <Projeto toggleModal={() => toggleModal(projeto)} projeto={projeto} />
-                                </swiper-slide>
+                                </SwiperSlide>
                             ))
                         }
-                    </swiper-container>
+                    </Swiper>
                 </div>
             </div>
 

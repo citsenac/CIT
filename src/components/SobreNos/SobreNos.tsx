@@ -14,7 +14,7 @@ export default function SobreNos({target}: {target: string}) {
     // Get window height and set animation
     const [scrollY, setScrollY] = useState(0);
     const [elementOffsetTop, setElementOffsetTop] = useState(0);
-    const animatedBoxRef = React.createRef();
+    const animatedBoxRef = React.createRef<HTMLElement>();
   
     useEffect(() => {
       const handleScroll = () => {

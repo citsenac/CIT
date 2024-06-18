@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { register } from 'swiper/element/bundle';
 import Conhecimentos from "./components/Conhecimentos/Conhecimentos";
 import Contato from './components/Contato/Contato';
 import Depoimentos from './components/Depoimentos/Depoimentos';
@@ -10,12 +9,10 @@ import Navbar from "./components/Navbar/Navbar";
 import Projetos from "./components/Projetos/Projetos";
 import SobreNos from "./components/SobreNos/SobreNos";
 import { auth, fetchCITData, signInWithEmailAndPassword } from "./firebase";
+import CITData from "./models/CITData";
 import './styles/main.css';
 
 function App() {
-
-  // Initialize Swiper
-  register();
 
   // Define sections
   const sections: {name: string, target: string}[] = [
@@ -48,9 +45,9 @@ function App() {
   // Define states
   const [loadingPage, setLoadingPage] = useState(true);
 
-  const [citData, setCITData] = useState(null);
+  const [citData, setCITData] = useState(new CITData());
   const [loadingDb, setLoadingDb] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError]: [unknown, React.Dispatch<React.SetStateAction<unknown>>] = useState();
   
   // Authenticate and fetch cit data
   const email = import.meta.env.VITE_FIREBASE_AUTH_EMAIL;
@@ -59,15 +56,17 @@ function App() {
   useEffect(() => {
     const authenticateAndFetchData = async () => {
       try {
+        console.log("Authenticating with email:", email);
         // Authenticate cit
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
+        await signInWithEmailAndPassword(auth, email, password);
         console.log("Authenticated successfully");
 
         // Fetch cit data from the root of the database
-        const data = await fetchCITData(user.uid);
+        const data: CITData = await fetchCITData();
+        console.log(data);
+        console.log(citData);
         setCITData(data);
-      } catch (authError) {
+      } catch (authError: unknown) {
         console.error("Authentication error:", authError);
         setError(authError);
       } finally {
@@ -75,7 +74,7 @@ function App() {
       }
     };
     authenticateAndFetchData();
-  }, []);
+  }, );
   if (error) {
     console.log(error);
   }

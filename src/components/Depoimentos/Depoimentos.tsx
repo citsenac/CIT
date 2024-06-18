@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 import useWindowDimensions from "../Utils/WindowDimensions";
 import Depoimento from "./Depoimento";
 
@@ -14,7 +15,7 @@ export default function Depoimentos({target, depoimentos}: {target: string, depo
     // Get window height and set animation
     const [scrollY, setScrollY] = useState(0);
     const [elementOffsetTop, setElementOffsetTop] = useState(0);
-    const animatedBoxRef = React.createRef();
+    const animatedBoxRef = React.createRef<HTMLElement>();
 
     useEffect(() => {
       const handleScroll = () => {
@@ -61,24 +62,26 @@ export default function Depoimentos({target, depoimentos}: {target: string, depo
                 </div>
     
                 <div className='max-w-96 md:max-w-4xl mx-auto relative z-1'>
-                    <swiper-container
+                    <Swiper
                         effect={'coverflow'}
-                        grab-cursor={true}
-                        centered-slides={true}
-                        slides-per-view={width > 768 ? 3.5 : 1.5}
-                        coverflow-effect-rotate={50}
-                        coverflow-effect-stretch={0}
-                        coverflow-effect-depth={100}
-                        coverflow-effect-modifier={1}
-                        coverflow-effect-slide-shadows={true}
+                        grabCursor={true}
+                        centeredSlides={true}
+                        slidesPerView={width > 768 ? 3.5 : 1.5}
+                        coverflowEffect={{
+                          rotate: 50,
+                          stretch: 0,
+                          depth: 100,
+                          modifier: 1,
+                          slideShadows: true,
+                        }}
                         loop={true}
                     >
                         {depoimentos.map((depoimento) => (
-                            <swiper-slide key={depoimento.id}>
+                            <SwiperSlide key={depoimento.id}>
                                 <Depoimento {...depoimento} />
-                            </swiper-slide>
+                            </SwiperSlide>
                         ))}
-                    </swiper-container>
+                    </Swiper>
                 </div>
             </div>
         </section>

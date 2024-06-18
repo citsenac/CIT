@@ -1,3 +1,4 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Aluno from "./Aluno";
 import Disciplinar from "./Disciplinar";
 
@@ -11,13 +12,13 @@ export default function Equipe({target, alunos, professores}: {target: string, a
                     <h3 className="text-2xl mb-8 font-semibold text-white poppins">
                         Alunos
                     </h3>
-                    <swiper-container effect="cards" class="w-64" loop='true' grab-cursor="true">
+                    <Swiper effect="cards" className="w-64" loop={true} grabCursor={true}>
                         {alunos.map((aluno) => (
-                            <swiper-slide key={aluno.id}>
+                            <SwiperSlide key={aluno.id}>
                                 <Aluno aluno={aluno} />
-                            </swiper-slide>
+                            </SwiperSlide>
                         ))}
-                    </swiper-container>
+                    </Swiper>
                 </div>
 
                 {/* Equipe Disciplinar */}
@@ -25,13 +26,13 @@ export default function Equipe({target, alunos, professores}: {target: string, a
                     <h3 className="text-2xl mb-8 font-semibold text-white poppins">
                         Equipe Disciplinar
                     </h3>
-                    <swiper-container effect="cards" class="w-64" loop='true' grab-cursor="true">
+                    <Swiper effect="cards" className="w-64" loop={true} grabCursor={true}>
                         {professores.map((funcionario) => (
-                            <swiper-slide key={funcionario.id}>
+                            <SwiperSlide key={funcionario.id}>
                                 <Disciplinar funcionario={funcionario} />
-                            </swiper-slide>
+                            </SwiperSlide>
                         ))}
-                    </swiper-container>
+                    </Swiper>
                 </div>
             </div>
 

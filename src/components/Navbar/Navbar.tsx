@@ -1,14 +1,14 @@
 import { useState } from "react";
-import scrolllock from 'scroll-lock';
+import scrollLock from "scroll-lock";
 export default function Navbar({sections}: {sections: {name: string, target: string}[]}) {
     const [open, setOpen] = useState(false);
 
-    scrolllock.enablePageScroll();
+    scrollLock.enablePageScroll();
 
     if (open) {
-        scrolllock.disablePageScroll();
+        scrollLock.disablePageScroll();
     } else {
-        scrolllock.enablePageScroll();
+        scrollLock.enablePageScroll();
     }
 
     const toggleMenu = () => {

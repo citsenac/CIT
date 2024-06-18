@@ -1,3 +1,5 @@
+import CITData from "./models/CITData";
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -23,7 +25,7 @@ const db = getDatabase(app);
 
 // Fetch data from the root of the database
 function fetchCITData() {
-  return new Promise((resolve, reject) => {
+  return new Promise<CITData>((resolve, reject) => {
     const userRef = ref(db, `/`);
     get(userRef)
       .then(snapshot => {
