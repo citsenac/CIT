@@ -26,7 +26,7 @@ export default function Conhecimentos({target, conhecimentos}: {target: string, 
                 {conhecimentosDisplay.map((conhecimentoGroup, index) => (
                     <ul className="w-full flex flex-wrap scroller-inner odd:self-end" key={index}>
                         {conhecimentoGroup.map((conhecimento) => (
-                            <li className={`capitalize min-w-fit p-2 flex items-center justify-center gap-x-3 h-10 text-sm font-semibold text-white bg-gradient-to-br from-[#303030] to-[#494949] border-solid border-[.5px] border-[#A5A5A5] poppins`} key={conhecimento.id}>
+                            <li className={`capitalize min-w-fit rounded-lg p-2 flex items-center justify-center gap-x-3 h-10 text-sm font-semibold text-white bg-gradient-to-br from-[#303030] to-[#494949] border-solid border-[.5px] border-[#A5A5A5] poppins`} key={conhecimento.id}>
                                 <img src={conhecimento.icon} alt="Stack icon" className="w-6 h-6" />
                                 {conhecimento.nome}
                             </li>
@@ -34,13 +34,13 @@ export default function Conhecimentos({target, conhecimentos}: {target: string, 
 
                         {/* Duplicate to make scroll effect */}
                         {scrollabe && conhecimentoGroup.map((conhecimento) => (
-                            <li className={`capitalize min-w-fit p-2 flex items-center justify-center gap-x-3 h-10 text-sm font-semibold text-white bg-gradient-to-br from-[#303030] to-[#494949] border-solid border-[.5px] border-[#A5A5A5] poppins`} key={conhecimento.id}>
+                            <li className={`capitalize min-w-fit rounded-lg p-2 flex items-center justify-center gap-x-3 h-10 text-sm font-semibold text-white bg-gradient-to-br from-[#303030] to-[#494949] border-solid border-[.5px] border-[#A5A5A5] poppins`} key={conhecimento.id}>
                             <img src={conhecimento.icon} alt="Stack icon" className="w-6 h-6" />
                             {conhecimento.nome}
                         </li>
                         ))}
                         {scrollabe && width > 1024 && conhecimentoGroup.map((conhecimento) => (
-                            <li className={`capitalize min-w-fit p-2 flex items-center justify-center gap-x-3 h-10 text-sm font-semibold text-white bg-gradient-to-br from-[#303030] to-[#494949] border-solid border-[.5px] border-[#A5A5A5] poppins`} key={conhecimento.id}>
+                            <li className={`capitalize min-w-fit rounded-lg p-2 flex items-center justify-center gap-x-3 h-10 text-sm font-semibold text-white bg-gradient-to-br from-[#303030] to-[#494949] border-solid border-[.5px] border-[#A5A5A5] poppins`} key={conhecimento.id}>
                             <img src={conhecimento.icon} alt="Stack icon" className="w-6 h-6" />
                             {conhecimento.nome}
                         </li>
