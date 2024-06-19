@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import scrolllock from 'scroll-lock';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Projeto from '../../models/Projeto';
 import Modal from '../Partials/Modal';
 import useWindowDimensions from '../Utils/WindowDimensions';
 import ModalProjeto from './ModalProjeto';
-import Projeto from './Projeto';
+import ProjetoComponent from './Projeto';
 
-export default function Projetos({target, projetos}: {target: string, projetos: {id: number, imgs: string[], title: string, desc: string}[]}) {
+export default function Projetos({target, projetos}: {target: string, projetos: Projeto[]}) {
 
     // Reduce motion check
     let animate: boolean = false;
@@ -68,9 +69,9 @@ export default function Projetos({target, projetos}: {target: string, projetos: 
 
     const [open, setOpen] = useState(false);
 
-    const [projeto, setProjeto] = useState({id: 0, imgs: [''], title: '', desc: ''});
+    const [projeto, setProjeto] = useState(new Projeto(0, [], '', ''));
 
-    const toggleModal = (projeto: {id: number, imgs: string[], title: string, desc: string}) => {
+    const toggleModal = (projeto: Projeto) => {
         setOpen( prev => {
                 return !prev
             }
@@ -107,7 +108,7 @@ export default function Projetos({target, projetos}: {target: string, projetos: 
                     >
                         {projetos.map((projeto) => (
                                 <SwiperSlide key={projeto.id} className="rounded-2xl">
-                                        <Projeto toggleModal={() => toggleModal(projeto)} projeto={projeto} />
+                                        <ProjetoComponent toggleModal={() => toggleModal(projeto)} projeto={projeto} />
                                 </SwiperSlide>
                             ))
                         }

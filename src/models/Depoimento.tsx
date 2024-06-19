@@ -1,4 +1,4 @@
-export default class Depoimentos {
+export default class Depoimento {
 
     id: number;
     img: string;

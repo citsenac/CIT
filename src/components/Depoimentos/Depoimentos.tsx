@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { EffectCoverflow } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Depoimento from "../../models/Depoimento";
 import useWindowDimensions from "../Utils/WindowDimensions";
-import Depoimento from "./Depoimento";
+import DepoimentoComponent from "./Depoimento";
 
-export default function Depoimentos({target, depoimentos}: {target: string, depoimentos: {id: number, img: string, nome: string, curso: string, depoimento: string}[]}) {
+export default function Depoimentos({target, depoimentos}: {target: string, depoimentos: Depoimento[]}) {
 
     // Reduce motion check
     let animate: boolean = false;
@@ -63,6 +65,7 @@ export default function Depoimentos({target, depoimentos}: {target: string, depo
     
                 <div className='max-w-96 md:max-w-4xl mx-auto relative z-1'>
                     <Swiper
+                        modules={[EffectCoverflow]}
                         effect={'coverflow'}
                         grabCursor={true}
                         centeredSlides={true}
@@ -78,7 +81,7 @@ export default function Depoimentos({target, depoimentos}: {target: string, depo
                     >
                         {depoimentos.map((depoimento) => (
                             <SwiperSlide key={depoimento.id}>
-                                <Depoimento {...depoimento} />
+                                <DepoimentoComponent {...depoimento} />
                             </SwiperSlide>
                         ))}
                     </Swiper>

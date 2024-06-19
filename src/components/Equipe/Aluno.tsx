@@ -1,4 +1,4 @@
-export default function Aluno({aluno}: {aluno: {id: number, img: string, nome: string, linkedin: string}}) {
+export default function AlunoComponent({aluno}: {aluno: {id: number, img: string, nome: string, linkedin: string}}) {
     return(
         <div className="flex flex-col items-center w-full h-80 relative border-2 border-solid border-[#989898] rounded-xl">
             <img src={aluno.img} alt="Imagem do aluno" className="w-full h-full object-cover rounded-xl" />

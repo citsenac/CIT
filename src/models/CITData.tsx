@@ -1,15 +1,15 @@
-import Alunos from "./Alunos";
-import Depoimentos from "./Depoimentos";
-import Professores from "./Professores";
+import Aluno from "./Aluno";
+import Depoimento from "./Depoimento";
+import Professor from "./Professor";
 import Projeto from "./Projeto";
 import Stack from "./Stack";
 
 export default class CITData {
     projetos: Projeto[];
     stacks: Stack[];
-    alunos: Alunos[];
-    professores: Professores[];
-    depoimentos: Depoimentos[];
+    alunos: Aluno[];
+    professores: Professor[];
+    depoimentos: Depoimento[];
 
     constructor() {
         this.projetos = [];

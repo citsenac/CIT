@@ -1,4 +1,4 @@
-export default class Professores {
+export default class Professor {
     id: number;
     img: string;
     nome: string;
