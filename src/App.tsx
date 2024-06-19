@@ -11,8 +11,14 @@ import SobreNos from "./components/SobreNos/SobreNos";
 import { auth, fetchCITData, signInWithEmailAndPassword } from "./firebase";
 import CITData from "./models/CITData";
 import './styles/main.css';
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle';
 
 function App() {
+
+  // register Swiper custom elements
+  register();
+
 
   // Define sections
   const sections: {name: string, target: string}[] = [
@@ -56,15 +62,12 @@ function App() {
   useEffect(() => {
     const authenticateAndFetchData = async () => {
       try {
-        console.log("Authenticating with email:", email);
         // Authenticate cit
         await signInWithEmailAndPassword(auth, email, password);
         console.log("Authenticated successfully");
 
         // Fetch cit data from the root of the database
         const data: CITData = await fetchCITData();
-        console.log(data);
-        console.log(citData);
         setCITData(data);
       } catch (authError: unknown) {
         console.error("Authentication error:", authError);
@@ -74,7 +77,7 @@ function App() {
       }
     };
     authenticateAndFetchData();
-  }, );
+  }, []);
   if (error) {
     console.log(error);
   }
@@ -87,14 +90,14 @@ function App() {
   return (
     <main className="bg-gradient-to-b from-[#232323] via-[#262626] via-63% to-[#161017] min-h-screen overflow-x-hidden">
       {/* If is loading and cit data not retrieved, show GIF */}
-      {(loadingPage || loadingDb) &&
+      {(loadingPage || loadingDb || citData.alunos.length < 1 || citData.projetos.length < 1 || citData.depoimentos.length < 1 || citData.professores.length < 1 || citData.stacks.length < 1) &&
         <div className="w-full h-screen flex items-center justify-center">
           <img src="cit-loading.gif" alt="Logo do CIT carregando" className='w-72 aspect-square' />
         </div>
       }
 
       {/* If is not loading and cit data retrieved, show content */}
-      {!loadingPage && !loadingDb && citData &&
+      {!loadingPage && !loadingDb && citData.alunos.length > 0 && citData.projetos.length > 0 && citData.depoimentos.length > 0 && citData.professores.length > 0 && citData.stacks.length > 0 &&
       <>
         <Navbar sections={sections} />
         <Header sections={sections} />

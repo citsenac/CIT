@@ -1,6 +1,7 @@
+import Stack from "../../models/Stack";
 import useWindowDimensions from "../Utils/WindowDimensions";
 
-export default function Conhecimentos({target, conhecimentos}: {target: string, conhecimentos: {id: number, nome: string, icon: string}[]}) {
+export default function Conhecimentos({target, conhecimentos}: {target: string, conhecimentos: Stack[]}) {
 
     // Get window width to set animation content
     const { width } = useWindowDimensions();

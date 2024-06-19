@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Projeto from '../../models/Projeto';
 
-export default function ModalProjeto({projeto}: {projeto: {id: number, imgs: string[], title: string, desc: string}}) {
+export default function ModalProjeto({projeto}: {projeto: Projeto}) {
     
     return (
             

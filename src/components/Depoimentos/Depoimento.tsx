@@ -1,4 +1,4 @@
-export default function Depoimento({id, img, nome, curso, depoimento}: {id: number, img: string, nome: string, curso: string, depoimento: string}){
+export default function DepoimentoComponent({id, img, nome, curso, depoimento}: {id: number, img: string, nome: string, curso: string, depoimento: string}){
 
     return (
         <div id={id.toString()} className="w-full h-[24rem] bg-[#1C1C1C] pt-4 pl-4 border-2 border-solid border-[#989898] rounded-lg flex flex-col">

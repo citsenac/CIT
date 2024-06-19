@@ -1,8 +1,11 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Aluno from "./Aluno";
-import Disciplinar from "./Disciplinar";
+import Aluno from "../../models/Aluno";
+import Professor from '../../models/Professor';
+import AlunoComponent from "./Aluno";
+import DisciplinarComponent from "./Disciplinar";
 
-export default function Equipe({target, alunos, professores}: {target: string, alunos: {id: number, img: string, nome: string, linkedin: string}[], professores: {id: number, img: string, nome: string, cargo: string}[]}) {
+
+export default function Equipe({target, alunos, professores}: {target: string, alunos: Aluno[], professores: Professor[]}) {
     return (
         <section id={target} className="relative md:max-w-4xl md:mx-auto mt-16 mx-2 border-y border-solid border-[#606060] flex flex-col items-center">
 
@@ -15,7 +18,7 @@ export default function Equipe({target, alunos, professores}: {target: string, a
                     <Swiper effect="cards" className="w-64" loop={true} grabCursor={true}>
                         {alunos.map((aluno) => (
                             <SwiperSlide key={aluno.id}>
-                                <Aluno aluno={aluno} />
+                                <AlunoComponent aluno={aluno} />
                             </SwiperSlide>
                         ))}
                     </Swiper>
@@ -29,7 +32,7 @@ export default function Equipe({target, alunos, professores}: {target: string, a
                     <Swiper effect="cards" className="w-64" loop={true} grabCursor={true}>
                         {professores.map((funcionario) => (
                             <SwiperSlide key={funcionario.id}>
-                                <Disciplinar funcionario={funcionario} />
+                                <DisciplinarComponent funcionario={funcionario} />
                             </SwiperSlide>
                         ))}
                     </Swiper>
