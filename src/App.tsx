@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import 'swiper/css/effect-coverflow';
 import Conhecimentos from "./components/Conhecimentos/Conhecimentos";
 import Contato from './components/Contato/Contato';
 import Depoimentos from './components/Depoimentos/Depoimentos';

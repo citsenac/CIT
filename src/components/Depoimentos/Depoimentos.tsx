@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { EffectCoverflow } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Depoimento from "../../models/Depoimento";
 import useWindowDimensions from "../Utils/WindowDimensions";
@@ -64,6 +65,7 @@ export default function Depoimentos({target, depoimentos}: {target: string, depo
     
                 <div className='max-w-96 md:max-w-4xl mx-auto relative z-1'>
                     <Swiper
+                        modules={[EffectCoverflow]}
                         effect={'coverflow'}
                         grabCursor={true}
                         centeredSlides={true}

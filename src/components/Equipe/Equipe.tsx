@@ -1,8 +1,12 @@
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Aluno from "../../models/Aluno";
 import Professor from '../../models/Professor';
 import AlunoComponent from "./Aluno";
 import DisciplinarComponent from "./Disciplinar";
+
+// import required modules
+import { EffectCards } from 'swiper/modules';
 
 
 export default function Equipe({target, alunos, professores}: {target: string, alunos: Aluno[], professores: Professor[]}) {
@@ -15,7 +19,7 @@ export default function Equipe({target, alunos, professores}: {target: string, a
                     <h3 className="text-2xl mb-8 font-semibold text-white poppins">
                         Alunos
                     </h3>
-                    <Swiper effect="cards" className="w-64" loop={true} grabCursor={true}>
+                    <Swiper modules={[EffectCards]} effect="cards" className="w-64" loop={true} grabCursor={true}>
                         {alunos.map((aluno) => (
                             <SwiperSlide key={aluno.id}>
                                 <AlunoComponent aluno={aluno} />
@@ -29,7 +33,7 @@ export default function Equipe({target, alunos, professores}: {target: string, a
                     <h3 className="text-2xl mb-8 font-semibold text-white poppins">
                         Equipe Disciplinar
                     </h3>
-                    <Swiper effect="cards" className="w-64" loop={true} grabCursor={true}>
+                    <Swiper modules={[EffectCards]} effect="cards" className="w-64" loop={true} grabCursor={true}>
                         {professores.map((funcionario) => (
                             <SwiperSlide key={funcionario.id}>
                                 <DisciplinarComponent funcionario={funcionario} />
