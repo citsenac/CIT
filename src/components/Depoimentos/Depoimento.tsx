@@ -15,7 +15,7 @@ export default function DepoimentoComponent({id, img, nome, curso, depoimento}: 
                     </p>
                 </div>
 
-                <img src="/icons/aspas.svg" alt="Aspas" className="mt-4 w-4" />
+                <img src="./icons/aspas.svg" alt="Aspas" className="mt-4 w-4" />
 
                 <p className="w-full mt-3">
                     {depoimento}
