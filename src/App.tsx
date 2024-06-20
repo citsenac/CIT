@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useCookies } from 'react-cookie';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import 'swiper/css/effect-coverflow';
@@ -51,6 +52,8 @@ function App() {
     }
   ];
 
+  const [cookies, setCookie] = useCookies();
+
   // Define states
   const [loadingPage, setLoadingPage] = useState(true);
 
@@ -63,32 +66,41 @@ function App() {
   const password = import.meta.env.VITE_FIREBASE_AUTH_PASSWORD;
 
   useEffect(() => {
-    const authenticateAndFetchData = async () => {
-      try {
-        // Authenticate cit
-        await signInWithEmailAndPassword(auth, email, password);
-        console.log("Authenticated successfully");
 
-        // Fetch cit data from the root of the database
-        const data: CITData = await fetchCITData();
-        setCITData(data);
-      } catch (authError: unknown) {
-        console.error("Authentication error:", authError);
-        setError(authError);
-      } finally {
-        setLoadingDb(false);
-      }
-    };
-    authenticateAndFetchData();
-  }, []);
+      // Set Timeout to load page
+      setTimeout(() => {
+        setLoadingPage(false);
+      }, 6100);
+
+      const authenticateAndFetchData = async () => {
+        try {
+          if(!cookies.citData){
+            // Authenticate cit
+            await signInWithEmailAndPassword(auth, email, password);
+            console.log("Authenticated successfully");
+
+            // Fetch cit data from the root of the database
+            const data: CITData = await fetchCITData();
+            setCookie('citData', data, { path: '/', maxAge: 3600 * 24 * 7 });
+            setCITData(data);
+          } else {
+            setCITData(cookies.citData);
+            setLoadingDb(false);
+          }
+        } catch (authError: unknown) {
+          console.error("Authentication error:", authError);
+          setError(authError);
+        } finally {
+          setLoadingDb(false);
+        }
+      };
+      authenticateAndFetchData();
+  }, [cookies, setCookie, email, password]);
   if (error) {
     console.log(error);
   }
 
-  // Set Timeout to load page
-  setTimeout(() => {
-    setLoadingPage(false);
-  }, 6100);
+  console.log(cookies.citData);
 
   return (
     <main className="bg-gradient-to-b from-[#232323] via-[#262626] via-63% to-[#161017] min-h-screen overflow-x-hidden">
