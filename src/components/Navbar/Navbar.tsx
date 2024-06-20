@@ -23,7 +23,7 @@ export default function Navbar({sections}: {sections: {name: string, target: str
 
             {/* Desktop navbar */}
             <nav className="hidden fixed left-1/2 -translate-x-1/2 z-50 navbar md:flex items-center justify-between px-9 py-2 gap-x-12 sf-pro-display mx-auto max-w-4xl w-full max-h-12 box-border bg-[#989898] bg-opacity-30 rounded-2xl border-solid border-2 border-[#989898] backdrop-blur-md glass-container-shadow">
-                <img src="logo-cit.svg" alt="Logo do CIT" className="w-8 h-8" />
+                <img src="./logo-cit.svg" alt="Logo do CIT" className="w-8 h-8" />
                 <ul className="nav-links flex items-center justify-between sf-pro-display text-base text-white flex-1 gap-x-12">
                     {sections.map((section: {name: string, target: string}) => {
                         return (
@@ -40,7 +40,7 @@ export default function Navbar({sections}: {sections: {name: string, target: str
 
             {/* Mobile navbar */}
             <button className="md:hidden" onClick={toggleMenu}>
-                <img src="/icons/hamb-nav.svg" alt="Ícone do menu" className="w-8 h-8" />
+                <img src="./icons/hamb-nav.svg" alt="Ícone do menu" className="w-8 h-8" />
             </button>
 
             { open && (
@@ -49,7 +49,7 @@ export default function Navbar({sections}: {sections: {name: string, target: str
 
                     <nav className="navbar-mobile absolute z-50 top-0 left-0 w-2/3 p-6 h-screen bg-gradient-to-b from-[#232323] to-[#262626]">
                         <button onClick={toggleMenu} className="mb-10">
-                            <img src="/icons/hamb-nav.svg" alt="Ícone do menu" className="w-8 h-8" />
+                            <img src="./icons/hamb-nav.svg" alt="Ícone do menu" className="w-8 h-8" />
                         </button>
 
                         <ul className="sf-pro-display text-sm text-white">
