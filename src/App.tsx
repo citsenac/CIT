@@ -95,12 +95,10 @@ function App() {
         }
       };
       authenticateAndFetchData();
-  }, [cookies, setCookie, email, password]);
+  }, [setCookie, cookies, email, password]);
   if (error) {
     console.log(error);
   }
-
-  console.log(cookies.citData);
 
   return (
     <main className="bg-gradient-to-b from-[#232323] via-[#262626] via-63% to-[#161017] min-h-screen overflow-x-hidden">
